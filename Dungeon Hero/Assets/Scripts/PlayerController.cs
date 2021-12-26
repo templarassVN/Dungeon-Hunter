@@ -9,8 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _speedMove = 5;
     private Rigidbody2D _playerrb;
-    [SerializeField]
-    private Transform _skin;
+    
 
     private void Awake()
     {
@@ -20,7 +19,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         _playerrb = GetComponent<Rigidbody2D>();
-        _skin.position = transform.position;
+       
     }
 
     // Update is called once per frame
