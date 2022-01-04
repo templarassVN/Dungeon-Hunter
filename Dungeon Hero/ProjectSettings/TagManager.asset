@@ -12,9 +12,9 @@ TagManager:
   - Water
   - UI
   - 
+  - Player
   - 
-  - 
-  - 
+  - Confiner
   - 
   - 
   - 
@@ -40,4 +40,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 2939348015
     locked: 0
