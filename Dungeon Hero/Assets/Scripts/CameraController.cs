@@ -5,10 +5,10 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Transform _player_tf;
+    public GameObject _player;
     void Awake()
     {
-        
+        _player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Start()
@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour
     private void FixedUpdate()
     {
         
-        transform.position = new Vector3(_player_tf.position.x, _player_tf.position.y,-10);
+        transform.position = new Vector3(_player.transform.position.x, _player.transform.position.y,-10);
 
     }
 }
