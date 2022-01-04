@@ -4,65 +4,60 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public static PlayerController instance; 
-
-    [SerializeField]
-    private float _speedMove = 5;
-    private Rigidbody2D _playerrb;
-
-    public bool _gotya = false;
-   
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    public float moveSpeed;
+    private Vector2 moveDirection;
+    public Rigidbody2D rigidBody;
+    public Transform gunArm;
+    private Camera camera;
+    public GameObject bullet;
+    public Transform firePos;
+    public float attackSpeed;
+    private float timeCount = 0;
     // Start is called before the first frame update
     void Start()
     {
-        _playerrb = GetComponent<Rigidbody2D>();
-        _gotya = false;  
+        rigidBody = GetComponent<Rigidbody2D>();
+        camera = Camera.main;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 mouse_pos = Input.mousePosition;
-        MoveWASD(); 
-    }
+        moveDirection.x = Input.GetAxisRaw("Horizontal");
+        moveDirection.y = Input.GetAxisRaw("Vertical");
 
-    void MoveWASD()
-    {
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
-        Vector2 move = new Vector2(x, y);
-        move.Normalize();
-        _playerrb.velocity = move * _speedMove;
-    }
+        moveDirection.Normalize();
+        //transform.position += new Vector3(moveDirection.x * Time.deltaTime *moveSpeed, moveDirection.y * Time.deltaTime * moveSpeed, 0f);
 
-    bool Got_1()
-    {
-        return _gotya;
-    }
+        rigidBody.velocity = moveDirection * moveSpeed;
 
+        Vector3 mousePosition = Input.mousePosition;
+        Vector3 screenPoint = camera.WorldToScreenPoint(transform.localPosition);
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
+        if(mousePosition.x < screenPoint.x){
+            transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
+            gunArm.localScale = new Vector3(-1.0f, -1.0f, 1.0f);
+        }else{
+            transform.localScale = Vector3.one;
+            gunArm.localScale = Vector3.one;
+        }
         
-        GameObject temp = collision.gameObject;
-        
-        if (temp.tag == "Finish")
-        {
-            _gotya = true;
+
+        //rotate gun arm
+        Vector2 offset = new Vector2(mousePosition.x - screenPoint.x, mousePosition.y - screenPoint.y);
+        float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
+        gunArm.rotation = Quaternion.Euler(0,0,angle);
+
+        if (Input.GetMouseButtonDown(0)){
+            //Instantiate(bullet, firePos.position, firePos.rotation);
+        }
+
+        if (Input.GetMouseButton(0)){
+            timeCount -= Time.deltaTime;
+            if (timeCount <=0) {
+                Instantiate(bullet, firePos.position, firePos.rotation);
+                timeCount = attackSpeed;
+            }
         }
     }
-
-
 }
