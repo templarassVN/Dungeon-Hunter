@@ -23,6 +23,7 @@ public class MainMissionPoint : MonoBehaviour
 
     private void FixedUpdate()
     {
+        /*
         Vector2 pos = transform.position - transform.up;
         RaycastHit2D hit = Physics2D.BoxCast(_boxCollider2D.bounds.center,_boxCollider2D.bounds.size,0f,Vector2.down, 1f, playerLayer);
        
@@ -36,6 +37,29 @@ public class MainMissionPoint : MonoBehaviour
         }
         else
             _UI_PressF.SetActive(false);
+        */
         
-       }
+    }
+
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider != null && collision.collider.tag == "Player")
+        {
+            _UI_PressF.SetActive(true);
+            if (Input.GetKeyDown("f"))
+            {
+
+            }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider != null && collision.collider.tag == "Player")
+        {
+            _UI_PressF.SetActive(false);
+        }
+    }
 }
