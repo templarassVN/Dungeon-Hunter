@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class LoadLevel1 : MonoBehaviour
 {
     GameObject _player ;
-    PlayerController _playerScript;
+    Sub_PlayerController _playerScript;
     private void Awake()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
-        _playerScript = _player.GetComponent<PlayerController>();
+        _playerScript = _player.GetComponent<Sub_PlayerController>();
     }
     // Start is called before the first frame update
     void Start()
@@ -21,8 +21,7 @@ public class LoadLevel1 : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if (_playerScript._gotya)
-            Destroy(gameObject);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,6 +36,10 @@ public class LoadLevel1 : MonoBehaviour
     void LoadScene_1()
     {
         _player.transform.position = new Vector3(-4.71f, -12f, 0);
+        _player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         SceneManager.LoadScene(1);
+
     }
+
+   
 }
