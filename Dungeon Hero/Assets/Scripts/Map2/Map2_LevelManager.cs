@@ -9,9 +9,8 @@ public class Map2_LevelManager : MonoBehaviour
     [SerializeField]
     Camera _maincam;
     [SerializeField]
-    Transform _Player;
-    [SerializeField]
-    float _speed = 1;
+    private GameObject _Map2_Stage;
+
     private void Awake()
     {
         _maincam = Camera.main;
@@ -20,7 +19,7 @@ public class Map2_LevelManager : MonoBehaviour
     void Start()
     {
         PlayableDirector director = GetComponent<PlayableDirector>();
-        UIController.Instance.SetGameState(GameState.CUTS);
+        GameStateManager.Instance.SetGameState(GameState.CUTS);
         StartCoroutine(PlayOpenMap2((director)));
     }
 
@@ -33,6 +32,13 @@ public class Map2_LevelManager : MonoBehaviour
     {
         playableDirector.Play();
         yield return new WaitForSeconds((float)playableDirector.duration);
-        UIController.Instance.SetGameState(GameState.PLAY);
+        GameStateManager.Instance.SetGameState(GameState.PLAY);
+        Map2_StageChange();
+    }
+
+    public void Map2_StageChange()
+    {
+        _Map2_Stage.SetActive(false);
+        _Map2_Stage.SetActive(true);
     }
 }

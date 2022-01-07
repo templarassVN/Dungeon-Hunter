@@ -19,7 +19,6 @@ public class Sub_PlayerController : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-      
         DontDestroyOnLoad(this);
 
         if (Instance == null)
@@ -39,21 +38,23 @@ public class Sub_PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!_atMenu && UIController.Instance.State.Equals(GameState.PLAY))
+            
+            if (!_atMenu && GameStateManager.Instance.State.Equals(GameState.PLAY))
             {
-                UIController.Instance.SetGameState(GameState.MENU);
+                GameStateManager.Instance.SetGameState(GameState.MENU);
             } else
             {
-                UIController.Instance.SetGameState(GameState.PLAY);
+                GameStateManager.Instance.SetGameState(GameState.PLAY);
             }
             _atMenu = !_atMenu;
         }
     }
     private void FixedUpdate()
     {
-        if(UIController.Instance.State.Equals (GameState.PLAY))
+        if(GameStateManager.Instance.State.Equals (GameState.PLAY))
             MoveWSAD();
         
     }

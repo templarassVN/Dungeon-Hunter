@@ -6,13 +6,21 @@ using UnityEngine.Playables;
 public class OpenLevelManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    
-    
+
     void Start()
     {
         PlayableDirector director = GetComponent<PlayableDirector>();
-        UIController.Instance.SetGameState(GameState.CUTS);
-        StartCoroutine(PlayTimelineRoutine((director)));
+        
+        if(GameStateManager.Instance._NewGame)
+        {
+            GameStateManager.Instance.SetGameState(GameState.CUTS);
+            StartCoroutine(PlayTimelineRoutine((director)));
+        } else
+        {
+            GameStateManager.Instance.SetGameState(GameState.PLAY);
+        }
+        
+        
     }
 
     // Update is called once per frame
@@ -22,6 +30,7 @@ public class OpenLevelManager : MonoBehaviour
     {
         playableDirector.Play();
         yield return new WaitForSeconds((float)playableDirector.duration);
-        UIController.Instance.SetGameState(GameState.PLAY);
+        GameStateManager.Instance.SetGameState(GameState.PLAY);
+        GameStateManager.Instance._NewGame = false;
     }
 }
