@@ -21,8 +21,8 @@ public class LoadLevel1 : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if (_playerScript._gotya)
-            Destroy(gameObject);
+        // if (_playerScript._gotya)
+        //     Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

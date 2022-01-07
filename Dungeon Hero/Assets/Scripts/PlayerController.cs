@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance {get; private set;}
     public float moveSpeed;
     private Vector2 moveDirection;
-    public Rigidbody2D rigidBody;
+    Rigidbody2D rigidBody;
     public Transform gunArm;
-    private Camera camera;
+    private Camera cam;
     public GameObject bullet;
     public Transform firePos;
     public float attackSpeed;
     private float timeCount = 0;
+    void Awake() {
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        camera = Camera.main;
+        cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -32,7 +36,7 @@ public class PlayerController : MonoBehaviour
         rigidBody.velocity = moveDirection * moveSpeed;
 
         Vector3 mousePosition = Input.mousePosition;
-        Vector3 screenPoint = camera.WorldToScreenPoint(transform.localPosition);
+        Vector3 screenPoint = cam.WorldToScreenPoint(transform.localPosition);
 
         if(mousePosition.x < screenPoint.x){
             transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);

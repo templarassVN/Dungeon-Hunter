@@ -13,11 +13,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - PlayerBullet
+  - Enermies
+  - EnermyBullets
+  - EnermyWeapon
   - 
   - 
   - 
