@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &51265376 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9004490179894362644, guid: 3e101beb7c972ae479f91141e5999a02, type: 3}
+  m_PrefabInstance: {fileID: 9004490178468935782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &177623667
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,6 +891,11 @@ Transform:
   m_Father: {fileID: 441509262}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1106071050 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9004490179163639809, guid: 3e101beb7c972ae479f91141e5999a02, type: 3}
+  m_PrefabInstance: {fileID: 9004490178468935782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1343792269
 GameObject:
   m_ObjectHideFlags: 3
@@ -16012,7 +16022,7 @@ GameObject:
   - component: {fileID: 1618082347}
   - component: {fileID: 1618082349}
   - component: {fileID: 1618082346}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Level Objects_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16207,6 +16217,11 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 769142305}
   m_ConfineScreenEdges: 1
   m_Damping: 0
+--- !u!4 &1975949131 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 763442475, guid: 3e101beb7c972ae479f91141e5999a02, type: 3}
+  m_PrefabInstance: {fileID: 9004490178468935782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2066347945
 GameObject:
   m_ObjectHideFlags: 0
@@ -16245,6 +16260,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9004490178957917824, guid: 3e101beb7c972ae479f91141e5999a02, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 2313351872969677622, guid: 6763ae73369a087448f0a33248ca8038, type: 3}
+    - target: {fileID: 9004490178957917824, guid: 3e101beb7c972ae479f91141e5999a02, type: 3}
+      propertyPath: gunArm
+      value: 
+      objectReference: {fileID: 51265376}
+    - target: {fileID: 9004490178957917824, guid: 3e101beb7c972ae479f91141e5999a02, type: 3}
+      propertyPath: firePos
+      value: 
+      objectReference: {fileID: 1975949131}
+    - target: {fileID: 9004490178957917824, guid: 3e101beb7c972ae479f91141e5999a02, type: 3}
+      propertyPath: attackSpeed
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004490178957917824, guid: 3e101beb7c972ae479f91141e5999a02, type: 3}
+      propertyPath: bodyRenderer
+      value: 
+      objectReference: {fileID: 1106071050}
     - target: {fileID: 9004490178957917824, guid: 3e101beb7c972ae479f91141e5999a02, type: 3}
       propertyPath: dashingSpeed
       value: 10
