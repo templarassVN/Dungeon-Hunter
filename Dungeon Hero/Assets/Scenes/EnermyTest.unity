@@ -428,6 +428,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9004490178957917824, guid: 3e101beb7c972ae479f91141e5999a02, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 2313351872969677622, guid: 6763ae73369a087448f0a33248ca8038, type: 3}
+    - target: {fileID: 9004490178957917824, guid: 3e101beb7c972ae479f91141e5999a02, type: 3}
       propertyPath: firePos
       value: 
       objectReference: {fileID: 1255695637}
@@ -702,18 +706,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 150
   speed: 3
-  rangeToChasePlayer: 0
-  deathSplatters:
-  - {fileID: 328394533588517412, guid: 6b0aa783896fe5148bed776ea13e2e69, type: 3}
-  - {fileID: 3324019604648548560, guid: eb68dff367d871a4eb0396b2542a60dd, type: 3}
-  - {fileID: 7203505871984064090, guid: c454887311ca8d74685c384b1f5ceabe, type: 3}
-  - {fileID: 5709432782535349292, guid: 92dbeccf11773de4bb07cf75a3e80429, type: 3}
-  hitEffect: {fileID: 1381366921015102942, guid: aca082fb62173624c9534164824ebf52, type: 3}
-  attackSpeed: 1
-  attackRange: 10
-  attackType: {fileID: 441836656963925351, guid: f56cf24c7918d3a40bfa2320da605457, type: 3}
-  attackPoint: {fileID: 390886511}
-  body: {fileID: 1851556284}
+  rangeToChasePlayer: 7
+  deathSplatters: []
+  hitEffect: {fileID: 0}
+  attackSpeed: 0
+  attackRange: 0
+  attackType: {fileID: 0}
+  attackPoint: {fileID: 0}
+  body: {fileID: 0}
 --- !u!95 &1851556287
 Animator:
   serializedVersion: 3

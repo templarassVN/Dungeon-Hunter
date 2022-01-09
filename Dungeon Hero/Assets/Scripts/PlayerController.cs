@@ -4,20 +4,45 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed;
+    /// <summary>
+    /// Component
+    /// </summary>
     private Vector2 moveDirection;
-    public Rigidbody2D rigidBody;
+    private Rigidbody2D rigidBody;
     public Transform gunArm;
     private Camera camera;
     public GameObject bullet;
     public Transform firePos;
+
+    [SerializeField]
+    private SpriteRenderer _mSpriteRender;
+
+    /// <summary>
+    /// Variable
+    /// </summary> 
+    public float moveSpeed;
     public float attackSpeed;
     private float timeCount = 0;
+    public static PlayerController instance;
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         camera = Camera.main;
+        _mSpriteRender.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -59,5 +84,12 @@ public class PlayerController : MonoBehaviour
                 timeCount = attackSpeed;
             }
         }
+    }
+
+    public Sprite ChangeSkin(Sprite other)
+    {
+        Sprite temp = _mSpriteRender.sprite;
+        _mSpriteRender.sprite = other;
+        return temp;
     }
 }

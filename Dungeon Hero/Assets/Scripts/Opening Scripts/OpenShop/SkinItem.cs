@@ -6,7 +6,7 @@ public class SkinItem : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    Sprite _skin;
+    SpriteRenderer _skin;
     [SerializeField]
     GameObject _PressE;
     bool _inbuyZone = false;
@@ -18,27 +18,25 @@ public class SkinItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (_inbuyZone)
+        {
+            if (Input.GetKeyDown("e"))
+            {
+                _skin.sprite = PlayerController.instance.ChangeSkin(_skin.sprite);
+            }
+        }
     }
+
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(collision.collider.tag);
         if (collision.collider != null && collision.collider.tag == "Player")
         {
-            _inbuyZone = true;
             _PressE.SetActive(true);
-         
+            _inbuyZone = true;
         }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision != null && collision.tag == "Player")
-        {
-            Debug.Log("press");
-
-        }
-       
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -46,6 +44,7 @@ public class SkinItem : MonoBehaviour
         if (collision.collider != null && collision.collider.tag == "Player")
         {
             _PressE.SetActive(false);
+            _inbuyZone = false;
         }
     }
 }

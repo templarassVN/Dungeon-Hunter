@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class LoadLevel1 : MonoBehaviour
 {
     GameObject _player ;
-    Sub_PlayerController _playerScript;
+    PlayerController _playerScript;
     private void Awake()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
-        _playerScript = _player.GetComponent<Sub_PlayerController>();
+        _playerScript = _player.GetComponent<PlayerController>();
     }
     // Start is called before the first frame update
     void Start()
