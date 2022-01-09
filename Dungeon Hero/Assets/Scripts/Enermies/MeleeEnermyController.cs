@@ -7,11 +7,10 @@ public class MeleeEnermyController : EnemyController {
     {
         if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < attackRange)
         {
-            animator.SetTrigger("Attack");
-
             attackCounter -= Time.deltaTime;
             if (attackCounter <= 0)
             {
+                animator.SetTrigger("Attack");
                 attackCounter = attackSpeed;
                 Instantiate(attackType, attackPoint.position, attackPoint.rotation);
             }

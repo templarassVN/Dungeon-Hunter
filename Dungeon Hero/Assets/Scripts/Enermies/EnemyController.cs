@@ -14,16 +14,22 @@ public class EnemyController : MonoBehaviour
 
     protected Animator animator;
 
-    public GameObject[] deathSplatters;
+    [SerializeField]
+    protected GameObject[] deathSplatters;
 
-    public ParticleSystem hitEffect;
+    [SerializeField]
+    protected ParticleSystem hitEffect;
     public float attackSpeed;
     protected float attackCounter;
     public float attackRange;
-    public GameObject attackType;
-    public Transform attackPoint;
 
-    public SpriteRenderer body;
+    [SerializeField]
+    protected GameObject attackType;
+
+    [SerializeField]
+    protected Transform attackPoint;
+
+    private SpriteRenderer body;
 
     // Start is called before the first frame update
     protected void Start()
@@ -31,6 +37,7 @@ public class EnemyController : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         attackCounter = attackSpeed;
+        body = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
