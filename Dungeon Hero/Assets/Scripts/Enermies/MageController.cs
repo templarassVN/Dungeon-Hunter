@@ -50,9 +50,10 @@ public class MageController : RangerController
             if (attackCounter <= 0)
             {
                 attackCounter = attackSpeed;
-                Instantiate(attackType, attackPoint.position + Vector3.up * 0.5f, attackPoint.rotation);
-                Instantiate(attackType, attackPoint.position, attackPoint.rotation);
-                Instantiate(attackType, attackPoint.position + Vector3.down * 0.5f, attackPoint.rotation);
+                Instantiate(attackType, attackPoint.position + new Vector3(0.5f, 0.5f, 0), attackPoint.rotation);
+                Instantiate(attackType, attackPoint.position + new Vector3(-0.5f, 0.5f, 0), attackPoint.rotation);
+                Instantiate(attackType, attackPoint.position + new Vector3(0.5f, -0.5f, 0), attackPoint.rotation);
+                Instantiate(attackType, attackPoint.position + new Vector3(-0.5f, -0.5f, 0), attackPoint.rotation);
             }
         }
     }
