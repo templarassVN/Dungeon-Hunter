@@ -31,7 +31,7 @@ public class SkinItem : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.collider.tag);
+        
         if (collision.collider != null && collision.collider.tag == "Player")
         {
             _PressE.SetActive(true);
