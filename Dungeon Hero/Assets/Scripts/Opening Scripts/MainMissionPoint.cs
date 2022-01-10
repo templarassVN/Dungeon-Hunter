@@ -14,7 +14,7 @@ public class MainMissionPoint : MonoBehaviour
     
     void Start()
     {
-        
+        Dialog.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,9 +25,9 @@ public class MainMissionPoint : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_isOpen)
+        if (_isOpen && GameStateManager.Instance.State.Equals(GameState.PLAY))
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKey(KeyCode.F))
             {
                 GameStateManager.Instance.SetGameState(GameState.CUTS);
                 Dialog.SetActive(true);

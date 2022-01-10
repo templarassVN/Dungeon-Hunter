@@ -8,34 +8,58 @@ public class DialogManager : MonoBehaviour
     [SerializeField]
     string[] _Sentences;
     [SerializeField]
-    float _text_speed = 1;
+    float _text_speed = 0.1f;
     [SerializeField]
     Text _textDisplay;
     int index = 0;
-
+    bool _isTyping = false;
+    IEnumerator _typingCoroutine;
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        gameObject.SetActive(false);
-        StartCoroutine(DisplayTextByChar(index));
+        _typingCoroutine = DisplayTextByChar();
     }
+    void OnEnable()
+    {
+        _isTyping = true;
+        StartCoroutine(_typingCoroutine);
+    }
+
+    
 
     // Update is called once per frame
     void Update()
     {
         if(gameObject.activeInHierarchy)
         {
+            Debug.Log(_isTyping);
             if (Input.GetKeyDown(KeyCode.Space))
-                NextSentence();
+            {
+                if (!_isTyping)
+                {
+                    _isTyping = true;
+                    NextSentence();
+                }
+                else
+                {
+                    StopCoroutine(_typingCoroutine);
+                    _isTyping = false;
+                    _textDisplay.text = _Sentences[index];
+                }
+                
+            }
         }
     }
 
-    IEnumerator DisplayTextByChar(int n)
+    IEnumerator DisplayTextByChar()
     {
-        foreach(char letter in _Sentences[n].ToCharArray())
+        for (int i = 0; i < _Sentences[index].Length; i++)
         {
-            _textDisplay.text += letter;
+            //Wait a certain amount of time, then continue with the for loop
             yield return new WaitForSeconds(_text_speed);
+            _textDisplay.text = _Sentences[index].Substring(0, i + 1);
+            if (i == _Sentences[index].Length - 1)
+                _isTyping = false;
         }
     }
 
@@ -45,9 +69,12 @@ public class DialogManager : MonoBehaviour
         if (index >= _Sentences.Length)
         {
             gameObject.SetActive(false);
+            GameStateManager.Instance.SetGameState(GameState.PLAY);
         }
-        _textDisplay.text = "";
-        
-        StartCoroutine(DisplayTextByChar(index));
+        else
+        {
+            _textDisplay.text = "";
+            StartCoroutine(_typingCoroutine);
+        }
     }
 }

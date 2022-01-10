@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float attackSpeed;
     private float timeCount = 0;
+    [SerializeField]
+    int _money = 100;
     public static PlayerController instance;
     void Awake()
     {
@@ -91,5 +93,18 @@ public class PlayerController : MonoBehaviour
         Sprite temp = _mSpriteRender.sprite;
         _mSpriteRender.sprite = other;
         return temp;
+    }
+
+    public int Money
+    {
+        get { return _money; }
+        set { _money = value; }
+    }
+
+    public void ChangeMoney(int amount)
+    {
+        if (_money + amount < 0)
+            return;
+        _money += amount;
     }
 }
