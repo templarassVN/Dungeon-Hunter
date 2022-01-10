@@ -11,6 +11,12 @@ public class DialogManager : MonoBehaviour
     float _text_speed = 0.1f;
     [SerializeField]
     Text _textDisplay;
+    [SerializeField]
+    GameObject Coin;
+
+    /// <summary>
+    /// Variable
+    /// </summary>
     int index = 0;
     bool _isTyping = false;
     IEnumerator _typingCoroutine;
@@ -25,7 +31,12 @@ public class DialogManager : MonoBehaviour
         StartCoroutine(_typingCoroutine);
     }
 
-    
+    private void Start()
+    {
+        Coin.SetActive(false);
+    }
+
+
 
     // Update is called once per frame
     void Update()
@@ -73,6 +84,8 @@ public class DialogManager : MonoBehaviour
         }
         else
         {
+            if (index == 1)
+                Coin.SetActive(true);
             _textDisplay.text = "";
             StartCoroutine(_typingCoroutine);
         }

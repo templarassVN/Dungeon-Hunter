@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         camera = Camera.main;
         _mSpriteRender.GetComponent<SpriteRenderer>();
+        UICoinController.Instance.ChangeText(_money);
     }
 
     // Update is called once per frame
@@ -106,5 +107,11 @@ public class PlayerController : MonoBehaviour
         if (_money + amount < 0)
             return;
         _money += amount;
+        UICoinController.Instance.ChangeText(_money);
+    }
+
+    public void ChangeSpeed(float amount)
+    {
+        moveSpeed += amount;
     }
 }

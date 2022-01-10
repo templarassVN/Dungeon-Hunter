@@ -1055,7 +1055,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201c2b1382268ab46bc284e50e83891d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 150
   speed: 4
+  rangeToChasePlayer: 7
+  deathSplatters: []
+  hitEffect: {fileID: 0}
+  attackSpeed: 0
+  attackRange: 0
+  attackType: {fileID: 0}
+  attackPoint: {fileID: 0}
+  body: {fileID: 0}
 --- !u!61 &1366747689
 BoxCollider2D:
   m_ObjectHideFlags: 0
