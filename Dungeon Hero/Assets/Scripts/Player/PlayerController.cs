@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rigidBody;
 
     //Camera
-    private Camera camera;
+    private Camera cam;
 
     //Shooting
     public Transform gunArm;
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        camera = Camera.main;
+        cam = Camera.main;
         animator = GetComponent<Animator>();
         activeSpeed = moveSpeed;
     }
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
         rigidBody.velocity = moveDirection * activeSpeed;
 
         Vector3 mousePosition = Input.mousePosition;
-        Vector3 screenPoint = camera.WorldToScreenPoint(transform.localPosition);
+        Vector3 screenPoint = cam.WorldToScreenPoint(transform.localPosition);
 
         if (mousePosition.x < screenPoint.x)
         {

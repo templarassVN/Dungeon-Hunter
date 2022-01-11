@@ -178,7 +178,6 @@ MonoBehaviour:
   attackRange: 10
   attackType: {fileID: 441836656963925351, guid: f56cf24c7918d3a40bfa2320da605457, type: 3}
   attackPoint: {fileID: 1615187500468585836}
-  body: {fileID: 1615187499511197887}
 --- !u!1 &1615187500468585837
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ public class EnermyBulletController : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log(other);
         PlayerController playerController = other.GetComponent<PlayerController>();
         if (playerController != null) {
             // damage to player
