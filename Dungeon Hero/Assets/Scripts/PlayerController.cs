@@ -89,12 +89,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public Sprite ChangeSkin(Sprite other)
-    {
-        Sprite temp = _mSpriteRender.sprite;
-        _mSpriteRender.sprite = other;
-        return temp;
-    }
+    
 
     public int Money
     {
