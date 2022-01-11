@@ -13,7 +13,7 @@ public class CameraControl : MonoBehaviour
     Transform _Player;
     private void Awake()
     {
-        _Player = GameObject.Find("Characters_0").transform;
+        _Player = GameObject.Find("Player").transform;
     }
     void Start()
     {

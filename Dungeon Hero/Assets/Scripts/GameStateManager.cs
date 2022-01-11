@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameState { CUTS, MENU, PLAY, DEATH }
+public enum GameState { CUTS, MENU, MISSION, PLAY, DEATH }
 public class GameStateManager : MonoBehaviour
 {
     public bool _NewGame = true;

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: c2a566af8c4c2504f91b8ebe3cd467f2
+=======
+guid: 5c052cb4a8bd4954cb7ccc321f9d4309
+>>>>>>> Create-a-gameflow
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
