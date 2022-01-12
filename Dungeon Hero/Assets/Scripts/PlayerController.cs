@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
     private float timeCount = 0;
     [SerializeField]
     int _money = 100;
+    [SerializeField]
+    public bool _hasKeyR1 = false;
+    [SerializeField]
+    public bool _hasKeyR2 = false;
     public static PlayerController instance;
     void Awake()
     {
