@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveDirection;
     private Rigidbody2D rigidBody;
     public Transform gunArm;
-    private Camera camera;
+    public Camera camera;
     public GameObject bullet;
     public Transform firePos;
 
@@ -63,6 +63,8 @@ public class PlayerController : MonoBehaviour
 
         rigidBody.velocity = moveDirection * moveSpeed;
 
+        if (camera == null)
+            camera = Camera.main;
         Vector3 mousePosition = Input.mousePosition;
         Vector3 screenPoint = camera.WorldToScreenPoint(transform.localPosition);
 
