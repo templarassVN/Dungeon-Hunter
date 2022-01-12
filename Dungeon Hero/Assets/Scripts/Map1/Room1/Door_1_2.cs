@@ -2,44 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainMissionPoint : MonoBehaviour
+public class Door_1_2 : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    GameObject _UI_PressF;
+    GameObject _GridRoom;
     [SerializeField]
-    GameObject Dialog;
-    bool _isOpen = false;
 
-    
+    ///Variable
+    GameObject _UI_PressE;
+    bool _isOpen = false;
+    // Start is called before the first frame update
     void Start()
     {
-        Dialog.SetActive(false);
+        _GridRoom.SetActive(true);
+        _UI_PressE.SetActive(false);
     }
 
-    
-    
-
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
+
         if (_isOpen && GameStateManager.Instance.State.Equals(GameState.PLAY))
         {
-            if (Input.GetKey(KeyCode.F))
+
+            if (Input.GetKey(KeyCode.E))
             {
-                GameStateManager.Instance.SetGameState(GameState.CUTS);
-                Dialog.SetActive(true);
+                gameObject.SetActive(false);
+                _GridRoom.SetActive(false);
+
             }
         }
-        
+
+
     }
-
-
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider != null && collision.collider.tag == "Player")
         {
-            _UI_PressF.SetActive(true);
+            _UI_PressE.SetActive(true);
             _isOpen = true;
         }
     }
@@ -48,7 +49,7 @@ public class MainMissionPoint : MonoBehaviour
     {
         if (collision.collider != null && collision.collider.tag == "Player")
         {
-            _UI_PressF.SetActive(false);
+            _UI_PressE.SetActive(false);
             _isOpen = false;
         }
     }
