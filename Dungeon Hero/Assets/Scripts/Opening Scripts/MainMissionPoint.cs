@@ -37,7 +37,7 @@ public class MainMissionPoint : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider != null && collision.collider.tag == "Player")
+        if (collision.collider != null && collision.collider.name == "Player")
         {
             _UI_PressF.SetActive(true);
             _isOpen = true;
@@ -46,7 +46,7 @@ public class MainMissionPoint : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.collider != null && collision.collider.tag == "Player")
+        if (collision.collider != null && collision.collider.name == "Player")
         {
             _UI_PressF.SetActive(false);
             _isOpen = false;

@@ -11,7 +11,7 @@ public class LoadScene : MonoBehaviour
     PlayerController _playerScript;
     private void Awake()
     {
-        _player = GameObject.FindGameObjectWithTag("Player");
+        _player = GameObject.Find("Player");
         _playerScript = _player.GetComponent<PlayerController>();
     }
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class LoadScene : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject temp = collision.gameObject;
-        if (temp.tag == "Player")
+        if (temp.name == "Player")
         {
             Load_Scene();
         }
@@ -41,6 +41,6 @@ public class LoadScene : MonoBehaviour
         _player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         SceneManager.LoadScene(_numsSce);
         Debug.Log("a");
-        PlayerController.instance.camera = Camera.main;
+        
     }
 }

@@ -27,11 +27,10 @@ public class Door : MonoBehaviour
             
             if (Input.GetKey(KeyCode.E))
             {
-                if(PlayerController.instance._hasKeyR1)
-                {
+                
                     gameObject.SetActive(false);
                     _GridRoom.SetActive(true);
-                } 
+
             }
         }
 
