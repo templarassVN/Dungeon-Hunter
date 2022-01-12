@@ -12,7 +12,7 @@ public class Coin : MonoBehaviour
     {
         if(collision != null && collision.name.Equals("Player"))
         {
-            PlayerController.instance.ChangeMoney(_amount);
+            
             Destroy(gameObject);
         }
 
