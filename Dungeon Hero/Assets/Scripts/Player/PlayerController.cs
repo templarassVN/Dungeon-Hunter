@@ -7,6 +7,10 @@ public class PlayerController : MonoBehaviour
     //Instance
     public static PlayerController instance;
 
+    //Body
+    [SerializeField]
+    GameObject _mBody;
+
     //Moving
     public float moveSpeed = 7.0f;
     private Vector2 moveDirection;
@@ -37,10 +41,11 @@ public class PlayerController : MonoBehaviour
     private float invicibleCount = 0.0f;
 
     // Health & Armor
-    private int maxHealth = 5;
-    private int currentHealth = 5;
-    private int maxArmor = 7;
-    private int currentArmor = 7;
+    private int maxHealth ;
+    private int currentHealth ;
+    [SerializeField]
+    private int maxArmor = 0;
+    private int currentArmor = 0;
 
     //Get hit timeCount
     private float hitTimeCount = 0;
@@ -64,11 +69,17 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        instance = this;
+        DontDestroyOnLoad(gameObject);
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
     }
     // Start is called before the first frame update
     void Start()
     {
+        maxArmor= _mBody.GetComponent<SkinStat>().AmorPoint;
+        currentArmor = maxArmor;
         rigidBody = GetComponent<Rigidbody2D>();
         cam = Camera.main;
         animator = GetComponent<Animator>();
@@ -86,6 +97,8 @@ public class PlayerController : MonoBehaviour
         rigidBody.velocity = moveDirection * activeSpeed;
 
         Vector3 mousePosition = Input.mousePosition;
+        if (cam == null)
+            cam = Camera.main;
         Vector3 screenPoint = cam.WorldToScreenPoint(transform.localPosition);
 
         if (mousePosition.x < screenPoint.x)
@@ -255,5 +268,10 @@ public class PlayerController : MonoBehaviour
             return;
         }
         ChangeArmor(damage);
+    }
+
+    public void changeSkin()
+    {
+        maxArmor = _mBody.GetComponent<SkinStat>().AmorPoint;
     }
 }
