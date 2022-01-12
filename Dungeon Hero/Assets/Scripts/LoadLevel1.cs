@@ -38,6 +38,7 @@ public class LoadLevel1 : MonoBehaviour
         _player.transform.position = new Vector3(-4.71f, -12f, 0);
         _player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         SceneManager.LoadScene(1);
+
     }
 
    

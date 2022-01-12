@@ -11,7 +11,7 @@ public class Open_CameraController : MonoBehaviour
     
     void Start()
     {
-        _mPlayer = GameObject.Find("Player");
+        _mPlayer = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame

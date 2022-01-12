@@ -17,10 +17,13 @@ public class MainMissionPoint : MonoBehaviour
         Dialog.SetActive(false);
     }
 
-    
-    
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (_isOpen && GameStateManager.Instance.State.Equals(GameState.PLAY))
         {

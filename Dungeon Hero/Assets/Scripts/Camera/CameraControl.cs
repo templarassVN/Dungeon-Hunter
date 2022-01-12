@@ -13,18 +13,21 @@ public class CameraControl : MonoBehaviour
     Transform _Player;
     private void Awake()
     {
-        
+        _Player = GameObject.Find("Player").transform;
     }
     void Start()
     {
-        _Player = _Player = GameObject.Find("Player").transform;
+        main = Camera.main;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(_Player.transform.position.x,
-                                           _Player.transform.position.y,
-                                           transform.position.z);
+        if (GameStateManager.Instance.State.Equals(GameState.PLAY))
+            transform.position = new Vector3(
+                                      Mathf.Lerp(transform.position.x, _Player.position.x, _speed),
+                                      Mathf.Lerp(transform.position.y, _Player.position.y, _speed),
+                                      transform.position.z);
+
     }
 }
