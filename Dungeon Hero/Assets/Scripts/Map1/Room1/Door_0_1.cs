@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door_1_2 : MonoBehaviour
+public class Door_0_1 : MonoBehaviour
 {
+    // Start is called before the first frame update
     // Start is called before the first frame update
     [SerializeField]
     GameObject _GridRoom;
     [SerializeField]
     GameObject _UI_PressE;
-    
+    [SerializeField]
+    GameObject _Room1Manager;
     bool _isOpen = false;
     // Start is called before the first frame update
     void Start()
@@ -24,11 +26,11 @@ public class Door_1_2 : MonoBehaviour
 
         if (_isOpen && GameStateManager.Instance.State.Equals(GameState.PLAY))
         {
-
             if (Input.GetKey(KeyCode.E))
             {
                 gameObject.SetActive(false);
                 _GridRoom.SetActive(false);
+                
             }
         }
 
@@ -36,7 +38,7 @@ public class Door_1_2 : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider != null && collision.collider.name == "Player")
+        if (collision.collider != null && collision.collider.name == "Player" && transform.position.x > collision.collider.transform.position.x)
         {
             _UI_PressE.SetActive(true);
             _isOpen = true;
@@ -49,6 +51,7 @@ public class Door_1_2 : MonoBehaviour
         {
             _UI_PressE.SetActive(false);
             _isOpen = false;
+           
         }
     }
 }

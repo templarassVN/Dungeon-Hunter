@@ -12,8 +12,6 @@ public class NPCDialog : MonoBehaviour
     [SerializeField]
     Text _textDisplay;
 
-
-
     /// <summary>
     /// Variable
     /// </summary>
@@ -43,7 +41,6 @@ public class NPCDialog : MonoBehaviour
     {
         if (gameObject.activeInHierarchy)
         {
-           
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (!_isTyping)
