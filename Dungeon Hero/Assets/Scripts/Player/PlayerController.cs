@@ -45,10 +45,10 @@ public class PlayerController : MonoBehaviour
     private float invicibleCount = 0.0f;
 
     // Health & Armor
-    private int maxHealth ;
+    private int maxHealth = 5;
     private int currentHealth ;
     [SerializeField]
-    private int maxArmor = 0;
+    private int maxArmor = 7;
     private int currentArmor = 0;
 
     //Get hit timeCount
