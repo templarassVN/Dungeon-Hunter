@@ -8,23 +8,26 @@ public class HitBoxController : MonoBehaviour
     public float castTime = 1f;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         castTime -= Time.deltaTime;
-        if (castTime <= 0) {
+        if (castTime <= 0)
+        {
             Destroy(gameObject);
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
+    void OnTriggerEnter2D(Collider2D other)
+    {
         Debug.Log(other);
         PlayerController playerController = other.GetComponent<PlayerController>();
-        if (playerController != null) {
-            // playerController nhận damage
+        if (playerController != null)
+        {
+            playerController.getHit(-1);
         }
     }
 }

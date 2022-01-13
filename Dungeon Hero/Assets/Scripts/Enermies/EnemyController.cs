@@ -29,7 +29,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     protected Transform attackPoint;
 
-    private SpriteRenderer body;
+    [SerializeField]
+    protected SpriteRenderer body;
 
     // Start is called before the first frame update
     protected void Start()
@@ -37,7 +38,6 @@ public class EnemyController : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         attackCounter = attackSpeed;
-        body = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -98,5 +98,11 @@ public class EnemyController : MonoBehaviour
 
             Instantiate(deathSplatters[selectedSplatter], transform.position, Quaternion.Euler(0, 0, rotationSplatter));
         }
+    }
+
+    public void UpgradeStreng() {
+        health += 50;
+        speed += 1;
+        attackSpeed -= 0.5f;
     }
 }

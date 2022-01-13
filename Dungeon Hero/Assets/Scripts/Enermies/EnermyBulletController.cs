@@ -23,7 +23,7 @@ public class EnermyBulletController : MonoBehaviour
         Debug.Log(other);
         PlayerController playerController = other.GetComponent<PlayerController>();
         if (playerController != null) {
-            // damage to player
+            playerController.getHit(-1);
         }
         Destroy(gameObject);
     }

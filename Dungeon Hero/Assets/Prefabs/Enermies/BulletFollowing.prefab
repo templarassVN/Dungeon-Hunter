@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 441836656963925145}
   - component: {fileID: 5353652251883789565}
   - component: {fileID: 1641957134986981468}
+  - component: {fileID: 3491040209435885521}
   m_Layer: 11
   m_Name: BulletFollowing
   m_TagString: Untagged
@@ -71,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1716323361
+  m_SortingLayer: 2
   m_SortingOrder: 5
   m_Sprite: {fileID: 7431529995326980795, guid: 1cc570f5e1a1d4349b08d31577ed759f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -222,3 +223,24 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!50 &3491040209435885521
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441836656963925351}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
