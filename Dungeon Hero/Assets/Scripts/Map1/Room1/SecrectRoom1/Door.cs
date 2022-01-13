@@ -5,16 +5,15 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     [SerializeField]
-    GameObject _GridRoom;
-    [SerializeField]
-
+    Room1Manager _room1Manager;
     ///Variable
+    ///
+    [SerializeField]
     GameObject _UI_PressE;
     bool _isOpen = false;
     // Start is called before the first frame update
     void Start()
     {
-        _GridRoom.SetActive(false);
         _UI_PressE.SetActive(false);
     }
 
@@ -27,10 +26,8 @@ public class Door : MonoBehaviour
             
             if (Input.GetKey(KeyCode.E))
             {
-                
-                    gameObject.SetActive(false);
-                    _GridRoom.SetActive(true);
-
+                gameObject.SetActive(false);
+                _room1Manager.EnterSecrectRoom1();
             }
         }
 
@@ -38,7 +35,7 @@ public class Door : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider != null && collision.collider.tag == "Player")
+        if (collision.collider != null && collision.collider.name == "Player")
         {
             _UI_PressE.SetActive(true);
             _isOpen = true;
@@ -47,7 +44,7 @@ public class Door : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.collider != null && collision.collider.tag == "Player")
+        if (collision.collider != null && collision.collider.name == "Player")
         {
             _UI_PressE.SetActive(false);
             _isOpen = false;
