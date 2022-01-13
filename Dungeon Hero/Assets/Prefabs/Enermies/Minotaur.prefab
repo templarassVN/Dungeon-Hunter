@@ -197,7 +197,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 250
   speed: 2
-  rangeToChasePlayer: 8
+  rateAppear: 1
+  rangeToChasePlayer: 10
   deathSplatters:
   - {fileID: 328394533588517412, guid: 6b0aa783896fe5148bed776ea13e2e69, type: 3}
   - {fileID: 3324019604648548560, guid: eb68dff367d871a4eb0396b2542a60dd, type: 3}
@@ -209,7 +210,7 @@ MonoBehaviour:
   attackType: {fileID: 7774989177897095847, guid: 1056e80c2f2624b4a8a61db7a41921f8, type: 3}
   attackPoint: {fileID: 5662073479558202443}
   body: {fileID: 5662073479806770244}
-  timeSummon: 10
+  timeSummon: 20
   creeps:
   - {fileID: 5265091304890158641, guid: 62a1c175900a7fe48b81070dd1088862, type: 3}
   - {fileID: 4936208867385444287, guid: c075b7c60526bd84695fe3d6be72f2dd, type: 3}

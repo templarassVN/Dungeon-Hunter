@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7485799051329645839}
   - component: {fileID: 7485799051329645836}
-  - component: {fileID: 7485799051329645837}
+  - component: {fileID: 7018373340775148689}
   m_Layer: 0
   m_Name: Spawn Enermy Zone
   m_TagString: Untagged
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7485799051329645837
+--- !u!114 &7018373340775148689
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,14 +92,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7485799051329645834}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 660044e2445529747a5c9cadf8216a56, type: 3}
+  m_Script: {fileID: 11500000, guid: 139da249d29082f44babda1853e0c38c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberEnemy: 5
-  currentEnemy: 0
-  enemyType:
-  - {fileID: 5662073479806770246, guid: bfa80bda165b6714b8e7190a71963148, type: 3}
-  - {fileID: 8507820207650633919, guid: db42d1e3cbb2a52448d4dcfd2d7aedd6, type: 3}
-  - {fileID: 1615187499511197880, guid: fff897bdacc65dd4db174a5eb713f629, type: 3}
-  - {fileID: 3864002420536261789, guid: 6254ba6f6e216974e8febb55cc94da9c, type: 3}
-  - {fileID: 3485322523550615094, guid: e80274000a7c06047a74732aa7f4356d, type: 3}
+  numberEnemy: 10
+  currentEnemy: -1
+  enemyType: []

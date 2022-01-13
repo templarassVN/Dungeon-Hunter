@@ -1,30 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-public class SpawnEnermy : MonoBehaviour
+public class SpawnEnemy : MonoBehaviour
 {
     public int numberEnemy = 10;
-    public int currentEnemy;
+    public int currentEnemy = -1;
 
     [SerializeField]
     GameObject[] enemyType;
     GameObject[] enemies;
-    const int MINOTAUR = 0;
-    const int MAGE = 1;
-    const int SADGUY = 2;
-    const int SKELETON = 3;
-    const int MELEESKELETON = 4;
-    int[] enemyRate = { MINOTAUR, MAGE, MAGE, SADGUY, SADGUY, SKELETON, SKELETON, SKELETON, SKELETON, MELEESKELETON, MELEESKELETON, MELEESKELETON, MELEESKELETON };
+
+    int[] enemyRate = { };
 
 
     // Start is called before the first frame update
     void Start()
     {
-        currentEnemy = numberEnemy;
-        enemies = new GameObject[numberEnemy];
-        Spawn();
+        
     }
 
     // Update is called once per frame
@@ -36,6 +29,18 @@ public class SpawnEnermy : MonoBehaviour
     // spawn enemy with enemyRate
     public void Spawn()
     {
+        currentEnemy = numberEnemy;
+        enemies = new GameObject[numberEnemy];
+        for (int i = 0; i < enemyType.Length; i++)
+        {
+            for (int j = 0; j < enemyType[i].GetComponent<EnemyController>().rateAppear; j++)
+            {
+                int[] newEnemyRate = new int[enemyRate.Length + 1];
+                enemyRate.CopyTo(newEnemyRate, 0);
+                newEnemyRate[enemyRate.Length] = i;
+                enemyRate = newEnemyRate;
+            }
+        }
         for (int i = 0; i < numberEnemy; i++)
         {
             int randomType = Random.Range(0, enemyRate.Length);
@@ -66,17 +71,18 @@ public class SpawnEnermy : MonoBehaviour
         }
     }
 
-    public void LevelUp() {
+    public void LevelUp()
+    {
         // more number of enemies
         numberEnemy += 1;
 
         // upgrade streng of enemies
-        for (int i = 0; i < enemyType.Length; i++) {
+        for (int i = 0; i < enemyType.Length; i++)
+        {
             enemyType[i].GetComponent<EnemyController>().UpgradeStreng();
         }
 
         // upgrade rate hard enemies
-        enemyRate.Concat(new int[] {MINOTAUR, MAGE, SADGUY, SKELETON, MELEESKELETON}).ToArray();
+        //enemyRate.Concat(new int[] {MINOTAUR, MAGE, SADGUY, SKELETON, MELEESKELETON}).ToArray();
     }
 }
- 

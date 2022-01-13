@@ -8,7 +8,7 @@ public class SkinStat : MonoBehaviour
     [SerializeField]
     float _speed;
     [SerializeField]
-    int _amour = 1;
+    int _armor = 1;
     void Start()
     {
 
@@ -28,8 +28,8 @@ public class SkinStat : MonoBehaviour
 
     public int AmorPoint
     {
-        get { return _amour; }
-        set { _amour = value; }
+        get { return _armor; }
+        set { _armor = value; }
     }
 
     public Sprite ChangeSprite(Sprite other)

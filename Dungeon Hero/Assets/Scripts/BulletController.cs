@@ -7,7 +7,7 @@ public class BulletController : MonoBehaviour
     public float speed = 7.5f;
     public int damage = 50;
     private Rigidbody2D rigidBody;
-    float timeDestroy = 2.0f;
+    public float timeDestroy = 2.0f;
     float timeCount = 0.0f;
     public GameObject impactEffect;
     // Start is called before the first frame update
@@ -28,10 +28,9 @@ public class BulletController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
         Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(gameObject);
-
-        EnemyController enemyController = other.GetComponent<EnemyController>();
-        if (enemyController != null) {
-            enemyController.TakedDamage(damage);
+        EnemyController e = other.GetComponent<EnemyController>();
+        if (e != null) {
+            e.TakedDamage(damage);
         }
     }
 }

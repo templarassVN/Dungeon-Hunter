@@ -52,7 +52,8 @@ public class SkinItem : MonoBehaviour
         Debug.Log(_player_skin.sprite);
         Sprite _player_old = _player_skin_stat.ChangeSprite(_curr_skin.sprite);
         
-        _curr_skin_stat.ChangeSprite(_player_old); 
+        _curr_skin_stat.ChangeSprite(_player_old);
+        PlayerController.instance.changeSkin();
 
         
     }
@@ -62,7 +63,7 @@ public class SkinItem : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
-        if (collision.collider != null && collision.collider.tag == "Player")
+        if (collision.collider != null && collision.collider.name== "Player")
         {
             _PressE.SetActive(true);
             _inbuyZone = true;
@@ -71,7 +72,7 @@ public class SkinItem : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.collider != null && collision.collider.tag == "Player")
+        if (collision.collider != null && collision.collider.name == "Player")
         {
             _PressE.SetActive(false);
             _inbuyZone = false;

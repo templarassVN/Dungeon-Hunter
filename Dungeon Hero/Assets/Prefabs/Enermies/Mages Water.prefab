@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 150
   speed: 3
+  rateAppear: 2
   rangeToChasePlayer: 0
   deathSplatters:
   - {fileID: 328394533588517412, guid: 6b0aa783896fe5148bed776ea13e2e69, type: 3}
@@ -175,11 +176,11 @@ MonoBehaviour:
   - {fileID: 5709432782535349292, guid: 92dbeccf11773de4bb07cf75a3e80429, type: 3}
   hitEffect: {fileID: 1381366921015102942, guid: aca082fb62173624c9534164824ebf52, type: 3}
   attackSpeed: 3
-  attackRange: 10
+  attackRange: 15
   attackType: {fileID: 6494938430988493536, guid: f90d7cbf1d4ce9a42a21edaec3e2b0b8, type: 3}
   attackPoint: {fileID: 8507820209331848828}
   body: {fileID: 8507820207650633918}
-  rangeToRun: 6
+  rangeToRun: 4
 --- !u!1 &8507820209331848829
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     public int health = 150;
 
     public float speed = 3f;
+    public int rateAppear = 1;
     protected Rigidbody2D rigidbody2d;
     protected Vector3 moveDirection;
 
@@ -38,6 +39,8 @@ public class EnemyController : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         attackCounter = attackSpeed;
+        float randomSpeed = Random.Range(-0.5f, 1f);
+        speed += randomSpeed;
     }
 
     // Update is called once per frame
