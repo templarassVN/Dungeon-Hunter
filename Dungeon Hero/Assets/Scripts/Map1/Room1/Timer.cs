@@ -13,7 +13,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetandRun();
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour
     {
         
     }
-    void SetandRun()
+    public void SetandRun()
     {
         _remainDur = Duration;
         StartCoroutine(UpdateTimer());
