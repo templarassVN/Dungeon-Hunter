@@ -31,8 +31,14 @@ public class Room1Manager : MonoBehaviour
 
     public void EnterSecrectRoom1()
     {
-        GameStateManager.Instance.SetGameState(GameState.CUTS);
-        StartCoroutine(BreakIntoSecrect1());
+
+        if (!_secrectRoom1.activeInHierarchy)
+        {
+            GameStateManager.Instance.SetGameState(GameState.CUTS);
+            StartCoroutine(BreakIntoSecrect1());
+        }
+        else
+            Camera.main.orthographicSize = 5;
 
     }
 
@@ -54,6 +60,5 @@ public class Room1Manager : MonoBehaviour
         EnterRoom1();
         GetComponent<BoxCollider2D>().enabled = false;
         Door.SetActive(true);
-
     }
 }

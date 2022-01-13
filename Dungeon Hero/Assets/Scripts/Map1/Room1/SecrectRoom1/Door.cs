@@ -6,6 +6,8 @@ public class Door : MonoBehaviour
 {
     [SerializeField]
     Room1Manager _room1Manager;
+    [SerializeField]
+    SecrecRoom1 _Scerectroom1;
     ///Variable
     ///
     [SerializeField]
@@ -28,6 +30,7 @@ public class Door : MonoBehaviour
             {
                 gameObject.SetActive(false);
                 _room1Manager.EnterSecrectRoom1();
+                
             }
         }
 
@@ -37,8 +40,19 @@ public class Door : MonoBehaviour
     {
         if (collision.collider != null && collision.collider.name == "Player")
         {
-            _UI_PressE.SetActive(true);
-            _isOpen = true;
+            if (collision.collider.transform.position.y < transform.position.y)
+            {
+                _UI_PressE.SetActive(true);
+                _isOpen = true;
+            }
+            else
+            {
+                if(_Scerectroom1.IsFinished)
+                {
+                    _UI_PressE.SetActive(true);
+                    _isOpen = true;
+                }
+            }
         }
     }
 

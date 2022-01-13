@@ -9,13 +9,18 @@ public class Door_1_2 : MonoBehaviour
     GameObject _GridRoom;
     [SerializeField]
     GameObject _UI_PressE;
-    
+    [SerializeField]
+    GameObject _room1;
+    [SerializeField]
+    GameObject _Room2;
+
     bool _isOpen = false;
     // Start is called before the first frame update
     void Start()
     {
         _GridRoom.SetActive(true);
         _UI_PressE.SetActive(false);
+        _room1.SetActive(true);
     }
 
     // Update is called once per frame
@@ -29,6 +34,8 @@ public class Door_1_2 : MonoBehaviour
             {
                 gameObject.SetActive(false);
                 _GridRoom.SetActive(false);
+                _room1.SetActive(false);
+                _Room2.SetActive(true);
             }
         }
 
