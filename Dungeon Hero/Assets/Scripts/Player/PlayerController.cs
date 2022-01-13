@@ -22,12 +22,16 @@ public class PlayerController : MonoBehaviour
     //Camera
     private Camera cam;
 
-    //Shooting
     public Transform gunArm;
+    public List<Gun> availableGun = new List<Gun>();
+    private int currentGun = 0;
+
+/*
+    //Shooting 
     public GameObject bullet;
     public Transform firePos;
     public float attackSpeed;
-    private float timeCount = 0;
+    private float timeCount = 0;*/
 
     //Animator
     private Animator animator;
@@ -50,7 +54,7 @@ public class PlayerController : MonoBehaviour
     //Get hit timeCount
     private float hitTimeCount = 0;
     private float hitTime = 2.0f;
-    private float recoverSpeed = 1.0f;
+    //private float recoverSpeed = 1.0f;
 
     //Dashing
     public float dashingSpeed = 10.0f;
@@ -65,6 +69,15 @@ public class PlayerController : MonoBehaviour
     public float moveBackCooldown = 1f;
     private float moveBackCounter = 0.0f;
     private float moveBackCoolCounter;
+
+    //Speed Up
+    public float speedUpSpeed = 15.0f;
+    public float speedUpLength = 3.5f;
+    public float speedUpCooldown = 5f;
+    private float speedUpCounter = 0.0f;
+    private float speedUpCoolCounter;
+
+    private int coin = 0;
 
 
     void Awake()
@@ -84,6 +97,19 @@ public class PlayerController : MonoBehaviour
         cam = Camera.main;
         animator = GetComponent<Animator>();
         activeSpeed = moveSpeed;
+
+        currentHealth = maxHealth;
+        currentArmor = maxArmor;
+
+        IngameUIController.instance.healthSlider.maxValue = maxHealth;
+        IngameUIController.instance.healthSlider.value = currentHealth;
+        IngameUIController.instance.healthText.text = currentHealth.ToString() + '/' + maxHealth.ToString();
+
+        IngameUIController.instance.armorSlider.maxValue = maxArmor;
+        IngameUIController.instance.armorSlider.value = currentArmor;
+        IngameUIController.instance.armorText.text = currentArmor.ToString() + '/' + maxArmor.ToString();
+
+        IngameUIController.instance.coinText.text = coin.ToString();
     }
 
     // Update is called once per frame
@@ -117,7 +143,7 @@ public class PlayerController : MonoBehaviour
         Vector2 offset = new Vector2(mousePosition.x - screenPoint.x, mousePosition.y - screenPoint.y);
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
         gunArm.rotation = Quaternion.Euler(0, 0, angle);
-
+/*
         if (Input.GetMouseButton(0))
         {
             timeCount -= Time.deltaTime;
@@ -126,7 +152,7 @@ public class PlayerController : MonoBehaviour
                 Instantiate(bullet, firePos.position, firePos.rotation);
                 timeCount = attackSpeed;
             }
-        }
+        }*/
 
         // isMoving
         if (moveDirection != Vector2.zero)
@@ -150,9 +176,9 @@ public class PlayerController : MonoBehaviour
         }
 
         //Recover armor
+        hitTimeCount += Time.deltaTime;
         if (hitTimeCount > hitTime)
         {
-            hitTimeCount += Time.deltaTime;
             int armor = (int)(hitTimeCount - hitTime);
             if (armor == 1)
             {
@@ -212,6 +238,60 @@ public class PlayerController : MonoBehaviour
         {
             moveBackCoolCounter -= Time.deltaTime;
         }
+
+        // Update is called once per frame
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            getHit(-2);
+        }
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            getHit(2);
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            ChangeCoin(2);
+        }
+        // Speed up
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            if (speedUpCounter <= 0 && speedUpCounter <=0)
+            {
+                activeSpeed = speedUpSpeed;
+                speedUpCounter = speedUpLength;
+                //animator.SetTrigger("speedUp");
+            }
+        }
+
+        if (speedUpCounter > 0)
+        {
+            speedUpCounter -= Time.deltaTime;
+            if (speedUpCounter <= 0)
+            {
+                activeSpeed = moveSpeed;
+                speedUpCoolCounter = speedUpCooldown;
+            }
+        }
+
+        if (speedUpCoolCounter > 0)
+        {
+            speedUpCoolCounter -= Time.deltaTime;
+        }
+
+        // SwitchGun
+        if (Input.GetKeyDown(KeyCode.Tab)){
+            if (availableGun.Count > 0){
+                currentGun++;
+                if (currentGun >= availableGun.Count){
+                    currentGun = 0;
+                }
+
+                SwitchGun();
+            }else{
+                Debug.LogError("No gun available");
+            }
+        }
+
     }
 
     void getInvisible()
@@ -236,8 +316,9 @@ public class PlayerController : MonoBehaviour
             //this.PlaySound(hurtSound);
         }
         currentHealth = Mathf.Clamp(currentHealth + health, 0, maxHealth);
-        print(currentHealth);
-        //UIHealthBar.instance.SetValue(currentHealth / (float) Maxhealth);
+        IngameUIController.instance.healthSlider.maxValue = maxHealth;
+        IngameUIController.instance.healthSlider.value = currentHealth;
+        IngameUIController.instance.healthText.text = currentHealth.ToString() + '/' + maxHealth.ToString();
     }
 
     public void ChangeArmor(int armor)
@@ -251,8 +332,9 @@ public class PlayerController : MonoBehaviour
             //this.PlaySound(hurtSound);
         }
         currentArmor = Mathf.Clamp(currentArmor + armor, 0, maxArmor);
-        //UIHealthBar.instance.SetValue(currentHealth / (float) Maxhealth);
-        print(currentArmor);
+        IngameUIController.instance.armorSlider.maxValue = maxArmor;
+        IngameUIController.instance.armorSlider.value = currentArmor;
+        IngameUIController.instance.armorText.text = currentArmor.ToString() + '/' + maxArmor.ToString();
 
     }
     public void getHit(int damage)
@@ -273,5 +355,25 @@ public class PlayerController : MonoBehaviour
     public void changeSkin()
     {
         maxArmor = _mBody.GetComponent<SkinStat>().AmorPoint;
+    }
+    public void ChangeCoin(int coins)
+    {
+        if (coins < 0)
+        {
+            return;
+            //animator.SetTrigger("Hit");
+            //this.PlaySound(hurtSound);
+        }
+        this.coin += coins;
+        IngameUIController.instance.coinText.text = this.coin.ToString();
+
+    }
+
+    public void SwitchGun(){
+        foreach(Gun thegun in availableGun){
+            thegun.gameObject.SetActive(false);
+        }
+
+        availableGun[currentGun].gameObject.SetActive(true);
     }
 }
