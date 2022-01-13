@@ -6,8 +6,9 @@ public class BulletController : MonoBehaviour
 {
     public float speed = 7.5f;
     private Rigidbody2D rigidBody;
-    float timeDestroy = 2.0f;
+    public float timeDestroy = 2.0f;
     float timeCount = 0.0f;
+      public int damage; 
     public GameObject impactEffect;
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,7 @@ public class BulletController : MonoBehaviour
         Destroy(gameObject);
         EnemyController e = other.GetComponent<EnemyController>();
         if (e != null) {
-            e.TakedDamage(50);
+            e.TakedDamage(damage);
         }
     }
 }
