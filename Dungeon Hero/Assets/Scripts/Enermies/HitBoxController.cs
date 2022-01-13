@@ -8,7 +8,6 @@ public class HitBoxController : MonoBehaviour
     public float castTime = 1f;
     void Start()
     {
-
     }
 
     // Update is called once per frame
