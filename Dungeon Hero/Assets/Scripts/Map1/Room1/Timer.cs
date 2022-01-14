@@ -7,13 +7,16 @@ public class Timer : MonoBehaviour
 {
     [SerializeField]
     int Duration;
+    [SerializeField]
+    GameObject _text;
     int _remainDur;
     [SerializeField]
-    Text display;
+    Text display ;
     // Start is called before the first frame update
     void Start()
     {
-        SetandRun();
+        _text.SetActive(false);
+        display = _text.GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -24,6 +27,7 @@ public class Timer : MonoBehaviour
     public void SetandRun()
     {
         _remainDur = Duration;
+        _text.SetActive(true);
         StartCoroutine(UpdateTimer());
     }
 

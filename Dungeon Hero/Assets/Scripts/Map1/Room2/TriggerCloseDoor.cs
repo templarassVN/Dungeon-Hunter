@@ -18,6 +18,6 @@ public class TriggerCloseDoor : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         _Door.SetActive(true);
-        Destroy(gameObject);
+        
     }
 }

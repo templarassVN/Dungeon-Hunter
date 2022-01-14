@@ -11,6 +11,9 @@ public class Room1Manager : MonoBehaviour
     PlayableDirector _entrance;
     [SerializeField]
     GameObject _secrectRoom1;
+    [SerializeField]
+    GameObject _Timer;
+    
 
     [SerializeField]
     SpawnEnemy spawnEnemyWave1;
@@ -58,5 +61,10 @@ public class Room1Manager : MonoBehaviour
         yield return new WaitForSeconds((float)_entrance.duration);
         _secrectRoom1.SetActive(true);
         GameStateManager.Instance.SetGameState(GameState.PLAY);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        _Timer.GetComponent<Timer>().SetandRun();
     }
 }

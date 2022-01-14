@@ -11,6 +11,8 @@ public class NPCDialog : MonoBehaviour
     float _text_speed = 0.1f;
     [SerializeField]
     Text _textDisplay;
+    [SerializeField]
+    NPC _talker;
     
 
     /// <summary>
@@ -89,6 +91,7 @@ public class NPCDialog : MonoBehaviour
         index += 1;
         if (index >= _Sentences.Length)
         {
+            _talker.isAccepted = true;
             gameObject.SetActive(false);
             GameStateManager.Instance.SetGameState(GameState.PLAY);
         }

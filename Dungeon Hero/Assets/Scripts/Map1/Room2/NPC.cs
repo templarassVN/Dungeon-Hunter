@@ -11,7 +11,10 @@ public class NPC : MonoBehaviour
     [SerializeField]
     GameObject Dialog;
     bool _isOpen = false;
-
+    [SerializeField]
+    bool _accepted = false;
+    [SerializeField]
+    bool _isfinish = false;
 
     void Start()
     {
@@ -53,5 +56,17 @@ public class NPC : MonoBehaviour
             _UI_PressF.SetActive(false);
             _isOpen = false;
         }
+    }
+
+    public bool isAccepted
+    {
+        get { return _accepted; }
+        set { _accepted = value; }
+    }
+
+    public bool isFinished
+    {
+        get { return _isfinish; }
+        set { _isfinish = value; }
     }
 }

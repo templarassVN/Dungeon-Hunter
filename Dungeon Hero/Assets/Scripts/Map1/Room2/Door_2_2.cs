@@ -2,48 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door_0_1 : MonoBehaviour
+public class Door_2_2 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    // Start is called before the first frame update
-    [SerializeField]
-    GameObject _GridRoom;
+    bool _isOpen = false;
+
+    ///Variable
+    ///
     [SerializeField]
     GameObject _UI_PressE;
     [SerializeField]
-    GameObject _Room1;
-    
-    bool _isOpen = false;
+    MainRoom _mainroom;
+   
     // Start is called before the first frame update
     void Start()
     {
-        _GridRoom.SetActive(true);
         _UI_PressE.SetActive(false);
-        _Room1.SetActive(false);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (_isOpen && GameStateManager.Instance.State.Equals(GameState.PLAY))
         {
+
             if (Input.GetKey(KeyCode.E))
             {
                 gameObject.SetActive(false);
-                _GridRoom.SetActive(false);
-                _Room1.SetActive(true);
+                
             }
         }
-
-
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider != null && collision.collider.name == "Player" && transform.position.x > collision.collider.transform.position.x)
+        if (collision.collider != null && collision.collider.name == "Player")
         {
-            _UI_PressE.SetActive(true);
-            _isOpen = true;
+            if (_mainroom.isFinished)
+            {
+                _UI_PressE.SetActive(true);
+                _isOpen = true;
+            }
         }
     }
 
@@ -53,7 +52,6 @@ public class Door_0_1 : MonoBehaviour
         {
             _UI_PressE.SetActive(false);
             _isOpen = false;
-           
         }
     }
 }
