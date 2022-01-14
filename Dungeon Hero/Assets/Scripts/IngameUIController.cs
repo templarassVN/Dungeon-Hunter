@@ -14,7 +14,11 @@ public class IngameUIController : MonoBehaviour
 
     public Text coinText;
     void Awake(){
-        instance = this;
+        DontDestroyOnLoad(gameObject);
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
     }
     // Start is called before the first frame update
     void Start()
