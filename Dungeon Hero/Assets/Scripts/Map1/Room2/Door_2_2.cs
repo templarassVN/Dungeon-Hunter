@@ -11,7 +11,7 @@ public class Door_2_2 : MonoBehaviour
     [SerializeField]
     GameObject _UI_PressE;
     [SerializeField]
-    MainRoom _mainroom;
+    RoomManager _mainroom;
    
     // Start is called before the first frame update
     void Start()

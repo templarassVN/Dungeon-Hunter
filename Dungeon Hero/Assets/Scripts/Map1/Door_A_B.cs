@@ -29,24 +29,27 @@ public class Door_A_B : MonoBehaviour
 
             if (Input.GetKey(KeyCode.E))
             {
-                gameObject.SetActive(false);
                 if (_room_to_open != null)
                     _room_to_open.SetActive(true);
                 if(_room_to_close != null)
                     _room_to_close.SetActive(false);
+                gameObject.SetActive(false);
             }
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider != null && collision.collider.name == "Player")
-        {
-
-                _UI_PressE.SetActive(true);
-                _isOpen = true;
-
-        }
+       
+            if (collision.collider != null && collision.collider.name == "Player")
+            {
+                if ((_room_to_close == null) ||
+                    (_room_to_close.GetComponent<RoomManager>() != null && _room_to_close.GetComponent<RoomManager>().isFinished))
+                    {
+                        _UI_PressE.SetActive(true);
+                        _isOpen = true;
+                    }  
+            }   
     }
 
     private void OnCollisionExit2D(Collision2D collision)

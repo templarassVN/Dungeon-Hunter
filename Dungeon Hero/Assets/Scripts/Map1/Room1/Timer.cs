@@ -41,6 +41,11 @@ public class Timer : MonoBehaviour
         }
     }
 
+    public int Timeleft
+    {
+        get { return _remainDur; }
+    }
+
     
 
     void UpdateUI_display(int second)

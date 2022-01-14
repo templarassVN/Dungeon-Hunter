@@ -27,7 +27,6 @@ public class SecrectDoor2 : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 gameObject.SetActive(false);
-
             }
         }
     }
