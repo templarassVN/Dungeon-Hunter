@@ -11,10 +11,12 @@ public class NPCDialog : MonoBehaviour
     float _text_speed = 0.1f;
     [SerializeField]
     Text _textDisplay;
+    
 
     /// <summary>
     /// Variable
     /// </summary>
+    
     [SerializeField]
     int index = 0;
     [SerializeField]
@@ -23,6 +25,7 @@ public class NPCDialog : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        index = 0;
         _typingCoroutine = DisplayTextByChar();
     }
     void OnEnable()
@@ -36,11 +39,14 @@ public class NPCDialog : MonoBehaviour
         
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
         if (gameObject.activeInHierarchy)
         {
+            Debug.Log(_textDisplay.text);
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (!_isTyping)
@@ -54,8 +60,14 @@ public class NPCDialog : MonoBehaviour
                     _isTyping = false;
                     _textDisplay.text = _Sentences[index];
                 }
-
             }
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                index = 0;
+                gameObject.SetActive(false);
+                GameStateManager.Instance.SetGameState(GameState.PLAY);
+            }
+            
         }
     }
 
@@ -63,14 +75,12 @@ public class NPCDialog : MonoBehaviour
     {
         for (int i = 0; i < _Sentences[index].Length; i++)
         {
+            
             //Wait a certain amount of time, then continue with the for loop
             yield return new WaitForSeconds(_text_speed);
             _textDisplay.text = _Sentences[index].Substring(0, i + 1);
-            if (i == _Sentences[index].Length - 1)   
-            {
+            if (i == _Sentences[index].Length - 1)
                 _isTyping = false;
-                index++;
-            }
         }
     }
 
@@ -83,7 +93,7 @@ public class NPCDialog : MonoBehaviour
             GameStateManager.Instance.SetGameState(GameState.PLAY);
         }
         else
-        { 
+        {
             _textDisplay.text = "";
             StartCoroutine(_typingCoroutine);
         }

@@ -20,7 +20,7 @@ public class Door_1_2 : MonoBehaviour
     {
         _GridRoom.SetActive(true);
         _UI_PressE.SetActive(false);
-        _room1.SetActive(true);
+        _Room2.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,8 +34,9 @@ public class Door_1_2 : MonoBehaviour
             {
                 gameObject.SetActive(false);
                 _GridRoom.SetActive(false);
-                _room1.SetActive(false);
                 _Room2.SetActive(true);
+                _room1.SetActive(false);
+                
             }
         }
 
