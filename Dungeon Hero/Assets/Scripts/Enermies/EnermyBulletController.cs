@@ -19,16 +19,19 @@ public class EnermyBulletController : MonoBehaviour
         transform.position += direction * speed * Time.deltaTime;
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
+    void OnTriggerEnter2D(Collider2D other)
+    {
         Debug.Log(other);
-        PlayerController playerController = other.GetComponent<PlayerController>();
-        if (playerController != null) {
-            // damage to player
-        }
         Destroy(gameObject);
+        PlayerController playerController = other.GetComponent<PlayerController>();
+        if (playerController != null)
+        {
+            playerController.getHit(-1);
+        }
     }
 
-    void OnBecameInvisible() {
-        Destroy(gameObject);
-    }
+    // void OnBecameInvisible()
+    // {
+    //     Destroy(gameObject);
+    // }
 }

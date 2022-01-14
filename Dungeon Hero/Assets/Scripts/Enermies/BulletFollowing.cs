@@ -35,16 +35,16 @@ public class BulletFollowing : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        Destroy(gameObject);
         PlayerController playerController = other.GetComponent<PlayerController>();
         if (playerController != null)
         {
-            // damage to player
+            playerController.getHit(-1);
         }
-        Destroy(gameObject);
     }
 
-    void OnBecameInvisible()
-    {
-        Destroy(gameObject);
-    }
+    // void OnBecameInvisible()
+    // {
+    //     Destroy(gameObject);
+    // }
 }

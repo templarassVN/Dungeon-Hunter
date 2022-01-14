@@ -103,8 +103,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1716323361
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -2991773290986861209, guid: 0dba6b1935a33ad4da3f87c0446334ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -153,7 +153,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.65, y: 4.8}
+    oldSize: {x: 3.72, y: 3.84}
     newSize: {x: 0.93, y: 0.96}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -195,9 +195,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a95748a7fa877b040bfeced357596620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 150
+  health: 250
   speed: 2
-  rangeToChasePlayer: 7
+  rateAppear: 1
+  rangeToChasePlayer: 10
   deathSplatters:
   - {fileID: 328394533588517412, guid: 6b0aa783896fe5148bed776ea13e2e69, type: 3}
   - {fileID: 3324019604648548560, guid: eb68dff367d871a4eb0396b2542a60dd, type: 3}
@@ -205,10 +206,14 @@ MonoBehaviour:
   - {fileID: 5709432782535349292, guid: 92dbeccf11773de4bb07cf75a3e80429, type: 3}
   hitEffect: {fileID: 1381366921015102942, guid: aca082fb62173624c9534164824ebf52, type: 3}
   attackSpeed: 2
-  attackRange: 3
+  attackRange: 4
   attackType: {fileID: 7774989177897095847, guid: 1056e80c2f2624b4a8a61db7a41921f8, type: 3}
   attackPoint: {fileID: 5662073479558202443}
-  timeSummon: 10
+  body: {fileID: 5662073479806770244}
+  itemsToDrop:
+  - {fileID: 4606703673863936565, guid: e5890a8fd04ef5048b5b86f93d63fb8d, type: 3}
+  itemDropPercent: 100
+  timeSummon: 20
   creeps:
   - {fileID: 5265091304890158641, guid: 62a1c175900a7fe48b81070dd1088862, type: 3}
   - {fileID: 4936208867385444287, guid: c075b7c60526bd84695fe3d6be72f2dd, type: 3}

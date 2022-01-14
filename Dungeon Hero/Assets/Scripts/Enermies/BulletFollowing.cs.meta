@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: fc182bd5a499de5488b9f1161e310237
+=======
+<<<<<<< HEAD:Dungeon Hero/Assets/Scripts/Collectable/Coin.cs.meta
+guid: d4f74782e8374774bb8170fba8262b85
+=======
+guid: fc182bd5a499de5488b9f1161e310237
+>>>>>>> 5d3a9a8e86607d0cc98d05066bcc940233d64311:Dungeon Hero/Assets/Scripts/Enermies/BulletFollowing.cs.meta
+>>>>>>> 5d3a9a8e86607d0cc98d05066bcc940233d64311
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

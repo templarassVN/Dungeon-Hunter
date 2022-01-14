@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7254286444295615431}
   - component: {fileID: 7254286444295615428}
   - component: {fileID: 7254286444295615429}
-  - component: {fileID: 7620383503249577660}
+  - component: {fileID: 8174318857303269713}
   m_Layer: 11
   m_Name: Enermy Bullet
   m_TagString: Untagged
@@ -71,9 +71,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingLayerID: -1716323361
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 874343242196921964, guid: 1cc570f5e1a1d4349b08d31577ed759f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
---- !u!50 &7620383503249577660
+--- !u!50 &8174318857303269713
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0

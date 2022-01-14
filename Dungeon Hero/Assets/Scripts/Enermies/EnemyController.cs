@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     public int health = 150;
 
     public float speed = 3f;
+    public int rateAppear = 1;
     protected Rigidbody2D rigidbody2d;
     protected Vector3 moveDirection;
 
@@ -29,7 +30,14 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     protected Transform attackPoint;
 
-    private SpriteRenderer body;
+    [SerializeField]
+    protected SpriteRenderer body;
+
+    [SerializeField]
+    protected GameObject[] itemsToDrop;
+    
+    [SerializeField]
+    protected float itemDropPercent;
 
     // Start is called before the first frame update
     protected void Start()
@@ -37,7 +45,8 @@ public class EnemyController : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         attackCounter = attackSpeed;
-        body = GetComponent<SpriteRenderer>();
+        float randomSpeed = Random.Range(-0.5f, 1f);
+        speed += randomSpeed;
     }
 
     // Update is called once per frame
@@ -97,6 +106,19 @@ public class EnemyController : MonoBehaviour
             int rotationSplatter = Random.Range(0, 360);
 
             Instantiate(deathSplatters[selectedSplatter], transform.position, Quaternion.Euler(0, 0, rotationSplatter));
+
+            // drop item
+            float dropChance = Random.Range(0, 100);
+            if (dropChance < itemDropPercent) {
+                int randomItem = Random.Range(0, itemsToDrop.Length);
+                Instantiate(itemsToDrop[randomItem], transform.position, transform.rotation);
+            }
         }
+    }
+
+    public void UpgradeStreng() {
+        health += 50;
+        speed += 1;
+        attackSpeed -= 0.5f;
     }
 }
