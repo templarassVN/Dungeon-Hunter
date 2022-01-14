@@ -210,3 +210,6 @@ MonoBehaviour:
   attackType: {fileID: 7310994212258052430, guid: 16160df0163bb6c489d9c2e70940c393, type: 3}
   attackPoint: {fileID: 3485322523051582931}
   body: {fileID: 3485322523550615080}
+  itemsToDrop:
+  - {fileID: 4606703673863936565, guid: e5890a8fd04ef5048b5b86f93d63fb8d, type: 3}
+  itemDropPercent: 25

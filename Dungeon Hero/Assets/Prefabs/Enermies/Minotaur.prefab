@@ -210,6 +210,9 @@ MonoBehaviour:
   attackType: {fileID: 7774989177897095847, guid: 1056e80c2f2624b4a8a61db7a41921f8, type: 3}
   attackPoint: {fileID: 5662073479558202443}
   body: {fileID: 5662073479806770244}
+  itemsToDrop:
+  - {fileID: 4606703673863936565, guid: e5890a8fd04ef5048b5b86f93d63fb8d, type: 3}
+  itemDropPercent: 100
   timeSummon: 20
   creeps:
   - {fileID: 5265091304890158641, guid: 62a1c175900a7fe48b81070dd1088862, type: 3}

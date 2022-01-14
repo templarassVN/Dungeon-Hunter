@@ -33,6 +33,12 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     protected SpriteRenderer body;
 
+    [SerializeField]
+    protected GameObject[] itemsToDrop;
+    
+    [SerializeField]
+    protected float itemDropPercent;
+
     // Start is called before the first frame update
     protected void Start()
     {
@@ -100,6 +106,13 @@ public class EnemyController : MonoBehaviour
             int rotationSplatter = Random.Range(0, 360);
 
             Instantiate(deathSplatters[selectedSplatter], transform.position, Quaternion.Euler(0, 0, rotationSplatter));
+
+            // drop item
+            float dropChance = Random.Range(0, 100);
+            if (dropChance < itemDropPercent) {
+                int randomItem = Random.Range(0, itemsToDrop.Length);
+                Instantiate(itemsToDrop[randomItem], transform.position, transform.rotation);
+            }
         }
     }
 

@@ -10,10 +10,11 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision != null && collision.name.Equals("Player"))
+        PlayerController playerController = collision.GetComponent<PlayerController>();
+        if(playerController != null)
         {
-            
             Destroy(gameObject);
+            playerController.ChangeCoin(_amount);
         }
 
     }

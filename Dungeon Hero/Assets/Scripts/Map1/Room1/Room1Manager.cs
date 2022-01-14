@@ -30,7 +30,7 @@ public class Room1Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerController.instance.transform.position.x > -10 && spawnEnemyWave1.currentEnemy == -1) {
+        if (PlayerController.instance.transform.position.x > -17 && spawnEnemyWave1.currentEnemy == -1) {
             spawnEnemyWave1.Spawn();
         }
         if (spawnEnemyWave1.currentEnemy == 0) {
