@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 250
-  speed: 2
+  speed: 3
   rateAppear: 1
   rangeToChasePlayer: 10
   deathSplatters:
@@ -213,7 +213,7 @@ MonoBehaviour:
   itemsToDrop:
   - {fileID: 4606703673863936565, guid: e5890a8fd04ef5048b5b86f93d63fb8d, type: 3}
   itemDropPercent: 100
-  timeSummon: 20
+  timeSummon: 10
   creeps:
   - {fileID: 5265091304890158641, guid: 62a1c175900a7fe48b81070dd1088862, type: 3}
   - {fileID: 4936208867385444287, guid: c075b7c60526bd84695fe3d6be72f2dd, type: 3}

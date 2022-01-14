@@ -46,7 +46,8 @@ public class PlayerController : MonoBehaviour
 
     // Health & Armor
     private int maxHealth = 5;
-    private int currentHealth ;
+    private int currentHealth;
+    
     [SerializeField]
     private int maxArmor = 7;
     private int currentArmor = 0;
@@ -79,6 +80,7 @@ public class PlayerController : MonoBehaviour
 
     private int coin = 0;
 
+    public int CurrentHealth { get => currentHealth; set => currentHealth = value; }
 
     void Awake()
     {
@@ -115,6 +117,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (currentHealth <= 0) {
+            return;
+        }
         //Moving & Rotate Character
         moveDirection.x = Input.GetAxisRaw("Horizontal");
         moveDirection.y = Input.GetAxisRaw("Vertical");
@@ -182,7 +187,8 @@ public class PlayerController : MonoBehaviour
             int armor = (int)(hitTimeCount - hitTime);
             if (armor == 1)
             {
-                ChangeArmor(armor);
+                if (currentHealth > 0)
+                    ChangeArmor(armor);
                 hitTimeCount = hitTime;
             }
         }

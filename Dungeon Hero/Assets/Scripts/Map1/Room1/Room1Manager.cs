@@ -14,6 +14,10 @@ public class Room1Manager : MonoBehaviour
     [SerializeField]
     GameObject _Timer;
     
+    [SerializeField]
+    GameObject clear;
+    float timeShowClear = 3f;
+    float countTime = 0f;
 
     [SerializeField]
     SpawnEnemy spawnEnemyWave1;
@@ -28,6 +32,8 @@ public class Room1Manager : MonoBehaviour
     void Start()
     {
         _secrectRoom1.SetActive(false);   
+        clear.SetActive(false);
+        countTime = timeShowClear;
     }
 
     // Update is called once per frame
@@ -44,9 +50,24 @@ public class Room1Manager : MonoBehaviour
             spawnEnemyWave3.Spawn();
             spawnEnemyWave2.currentEnemy = -2;
         }
+        if (clear.activeInHierarchy) {
+            countTime -= Time.deltaTime;
+            if (countTime <= 0) {
+                clear.SetActive(false);
+            }
+        }
         if (spawnEnemyWave3.currentEnemy == 0) {
             _isFinished = true;
+            if (countTime > 0) {
+                clear.SetActive(true);
+            }
         }
+    }
+
+    public bool isFinished
+    {
+        get { return _isFinished; }
+        set { _isFinished = value; }
     }
 
     public void EnterSecrectRoom1()

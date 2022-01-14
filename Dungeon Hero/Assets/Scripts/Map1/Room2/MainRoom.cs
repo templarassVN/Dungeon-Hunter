@@ -15,6 +15,10 @@ public class MainRoom : MonoBehaviour
     [SerializeField]
     SpawnEnemy spawnEnemyWave2;
 
+    [SerializeField]
+    GameObject clear;
+    float countTime = 3f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,10 +37,19 @@ public class MainRoom : MonoBehaviour
             spawnEnemyWave2.Spawn();
             spawnEnemyWave1.currentEnemy = -2;
         }
-        if (spawnEnemyWave2.currentEnemy == 0)
-        {
-            _isFinished = true;
+        if (clear.activeInHierarchy) {
+            countTime -= Time.deltaTime;
+            if (countTime <= 0) {
+                clear.SetActive(false);
+            }
         }
+        if (spawnEnemyWave2.currentEnemy == 0) {
+            _isFinished = true;
+            if (countTime > 0) {
+                clear.SetActive(true);
+            }
+        }
+
     }
 
     public bool isFinished

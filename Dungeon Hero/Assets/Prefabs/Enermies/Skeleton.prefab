@@ -198,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 150
   speed: 2
-  rateAppear: 4
+  rateAppear: 3
   rangeToChasePlayer: 10
   deathSplatters:
   - {fileID: 328394533588517412, guid: 6b0aa783896fe5148bed776ea13e2e69, type: 3}
