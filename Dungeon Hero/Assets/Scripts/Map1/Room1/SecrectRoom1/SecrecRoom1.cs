@@ -20,7 +20,6 @@ public class SecrecRoom1 : MonoBehaviour
     {
         GetComponent<BoxCollider2D>().enabled = false;
         Door.SetActive(true);
-
     }
 
     public bool IsFinished

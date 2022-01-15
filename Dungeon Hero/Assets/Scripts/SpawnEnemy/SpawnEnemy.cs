@@ -30,6 +30,9 @@ public class SpawnEnemy : MonoBehaviour
     public void Spawn()
     {
         currentEnemy = numberEnemy;
+        if (numberEnemy == 0) {
+            return;
+        }
         enemies = new GameObject[numberEnemy];
         for (int i = 0; i < enemyType.Length; i++)
         {
