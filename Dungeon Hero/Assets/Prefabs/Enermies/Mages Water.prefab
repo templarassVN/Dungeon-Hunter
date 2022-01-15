@@ -183,7 +183,7 @@ MonoBehaviour:
   itemsToDrop:
   - {fileID: 4606703673863936565, guid: e5890a8fd04ef5048b5b86f93d63fb8d, type: 3}
   itemDropPercent: 50
-  rangeToRun: 4
+  rangeToRun: 5
 --- !u!1 &8507820209331848829
 GameObject:
   m_ObjectHideFlags: 0
