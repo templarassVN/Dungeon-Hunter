@@ -93,7 +93,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxArmor= _mBody.GetComponent<SkinStat>().AmorPoint;
+        moveSpeed = _mBody.GetComponent<SkinStat>().SpeedPoint;
+        maxArmor = _mBody.GetComponent<SkinStat>().AmorPoint;
         currentArmor = maxArmor;
         rigidBody = GetComponent<Rigidbody2D>();
         cam = Camera.main;
@@ -103,15 +104,13 @@ public class PlayerController : MonoBehaviour
         currentHealth = maxHealth;
         currentArmor = maxArmor;
 
-        IngameUIController.instance.healthSlider.maxValue = maxHealth;
-        IngameUIController.instance.healthSlider.value = currentHealth;
-        IngameUIController.instance.healthText.text = currentHealth.ToString() + '/' + maxHealth.ToString();
-
-        IngameUIController.instance.armorSlider.maxValue = maxArmor;
-        IngameUIController.instance.armorSlider.value = currentArmor;
-        IngameUIController.instance.armorText.text = currentArmor.ToString() + '/' + maxArmor.ToString();
-
-        IngameUIController.instance.coinText.text = coin.ToString();
+        IngameUIController.instance.ChangeMaxHealth(maxHealth);
+        IngameUIController.instance.ChangeCurrentHealth(currentHealth);
+        
+        IngameUIController.instance.ChangeMaxArmor(maxArmor);
+        IngameUIController.instance.ChangeCurrentArmor(currentArmor);
+        
+        IngameUIController.instance.ChangeCoinText(coin);
     }
 
     // Update is called once per frame
@@ -322,9 +321,10 @@ public class PlayerController : MonoBehaviour
             //this.PlaySound(hurtSound);
         }
         currentHealth = Mathf.Clamp(currentHealth + health, 0, maxHealth);
-        IngameUIController.instance.healthSlider.maxValue = maxHealth;
-        IngameUIController.instance.healthSlider.value = currentHealth;
-        IngameUIController.instance.healthText.text = currentHealth.ToString() + '/' + maxHealth.ToString();
+        IngameUIController.instance.ChangeMaxHealth(maxHealth);
+        IngameUIController.instance.ChangeCurrentHealth(currentHealth);
+        
+
     }
 
     public void ChangeArmor(int armor)
@@ -338,10 +338,11 @@ public class PlayerController : MonoBehaviour
             //this.PlaySound(hurtSound);
         }
         currentArmor = Mathf.Clamp(currentArmor + armor, 0, maxArmor);
-        IngameUIController.instance.armorSlider.maxValue = maxArmor;
-        IngameUIController.instance.armorSlider.value = currentArmor;
-        IngameUIController.instance.armorText.text = currentArmor.ToString() + '/' + maxArmor.ToString();
 
+        IngameUIController.instance.ChangeMaxArmor(maxArmor);
+        IngameUIController.instance.ChangeCurrentArmor(currentArmor);
+        
+  
     }
     public void getHit(int damage)
     {
@@ -361,18 +362,19 @@ public class PlayerController : MonoBehaviour
     public void changeSkin()
     {
         maxArmor = _mBody.GetComponent<SkinStat>().AmorPoint;
+        activeSpeed = _mBody.GetComponent<SkinStat>().SpeedPoint;
+        IngameUIController.instance.ChangeMaxArmor(maxArmor);
     }
     public void ChangeCoin(int coins)
     {
-        if (coins < 0)
+        if (coin < 0)
         {
             return;
             //animator.SetTrigger("Hit");
             //this.PlaySound(hurtSound);
         }
         this.coin += coins;
-        IngameUIController.instance.coinText.text = this.coin.ToString();
-
+        IngameUIController.instance.ChangeCoinText(coin);
     }
 
     public void SwitchGun(){
@@ -381,5 +383,11 @@ public class PlayerController : MonoBehaviour
         }
 
         availableGun[currentGun].gameObject.SetActive(true);
+    }
+
+    public int Coin
+    {
+        get { return coin; }
+        set { coin = value; }
     }
 }

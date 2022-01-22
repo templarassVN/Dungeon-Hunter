@@ -27,8 +27,40 @@ public class IngameUIController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void ChangeMaxHealth(int amount)
     {
-        
+        healthSlider.maxValue = amount;
+    }
+
+    public void ChangeCurrentHealth(int amount)
+    {
+        healthSlider.value = amount;
+    }
+
+    public void ChangeHealthText()
+    {
+        healthText.text = healthSlider.value.ToString() + '/' + healthSlider.maxValue.ToString();
+    }
+
+    public void ChangeMaxArmor(int amount)
+    {
+        armorSlider.maxValue = amount;
+        ChangeArmorText();
+    }
+
+    public void ChangeCurrentArmor(int amount)
+    {
+        armorSlider.value = amount;
+        ChangeArmorText();
+    }
+
+    public void ChangeArmorText()
+    {
+        armorText.text = armorSlider.value.ToString() + '/' + armorSlider.maxValue.ToString();
+    }
+
+    public void ChangeCoinText(int amount)
+    {
+        coinText.text = amount.ToString();
     }
 }

@@ -17,9 +17,6 @@ public class MainMissionPoint : MonoBehaviour
         Dialog.SetActive(false);
     }
 
-    
-    
-
     private void Update()
     {
         if (_isOpen && GameStateManager.Instance.State.Equals(GameState.PLAY))

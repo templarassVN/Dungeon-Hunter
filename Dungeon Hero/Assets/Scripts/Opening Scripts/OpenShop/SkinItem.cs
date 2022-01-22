@@ -1,17 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SkinItem : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
     GameObject _PressE;
+    [SerializeField]
+    GameObject _offer;
+    [SerializeField]
+    Text _price;
 
     /// <summary>
     /// Variable
     /// </summary>
     bool _inbuyZone = false;
+    bool _isBought = false;
     [SerializeField]
     int _cost = 100;
     [SerializeField]
@@ -21,6 +27,7 @@ public class SkinItem : MonoBehaviour
     void Start()
     {
         _playerSkin = GameObject.Find("Body");
+        _price.text = _cost.ToString();
     }
 
     // Update is called once per frame
@@ -30,7 +37,18 @@ public class SkinItem : MonoBehaviour
         {
             if (Input.GetKeyDown("e"))
             {
-                Exchange();
+                if(_isBought)
+                    Exchange();
+                else
+                {
+                    if (PlayerController.instance.Coin >= _cost)
+                    {
+                        PlayerController.instance.ChangeCoin(-_cost);
+                        _isBought = true;
+                        _offer.SetActive(false);
+                        _PressE.SetActive(true);
+                    }
+                }
             }
         }
     }
@@ -53,19 +71,22 @@ public class SkinItem : MonoBehaviour
         Sprite _player_old = _player_skin_stat.ChangeSprite(_curr_skin.sprite);
         
         _curr_skin_stat.ChangeSprite(_player_old);
-        PlayerController.instance.changeSkin();
-
-        
+        PlayerController.instance.changeSkin(); 
     }
 
     
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
         if (collision.collider != null && collision.collider.name== "Player")
         {
-            _PressE.SetActive(true);
+            if (_isBought)
+            {
+                _PressE.SetActive(true);
+            } else
+            {
+                _offer.SetActive(true);
+            }
             _inbuyZone = true;
         }
     }
@@ -75,7 +96,10 @@ public class SkinItem : MonoBehaviour
         if (collision.collider != null && collision.collider.name == "Player")
         {
             _PressE.SetActive(false);
+            _offer.SetActive(false);
             _inbuyZone = false;
         }
     }
+
+   
 }
