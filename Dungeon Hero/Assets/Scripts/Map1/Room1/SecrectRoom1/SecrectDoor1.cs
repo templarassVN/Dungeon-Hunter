@@ -25,9 +25,12 @@ public class SecrectDoor1 : MonoBehaviour
     {
         if (_isOpen && GameStateManager.Instance.State.Equals(GameState.PLAY))
         {
-
             if (Input.GetKey(KeyCode.E))
             {
+                if (PlayerController.instance.transform.position.y < transform.position.y)
+                    Camera.main.orthographicSize = 2.5f;
+                else
+                    Camera.main.orthographicSize = 5f;
                 _secrectRoom1.SetActive(true);
                 gameObject.SetActive(false);
             }

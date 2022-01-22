@@ -9,6 +9,9 @@ public class MainMissionPoint : MonoBehaviour
     GameObject _UI_PressF;
     [SerializeField]
     GameObject Dialog;
+    [SerializeField]
+    GameObject mark;
+    bool _mission = true;
     bool _isOpen = false;
 
     
@@ -24,9 +27,14 @@ public class MainMissionPoint : MonoBehaviour
             if (Input.GetKey(KeyCode.F))
             {
                 GameStateManager.Instance.SetGameState(GameState.CUTS);
+                _mission = false;
+                mark.SetActive(false);
                 Dialog.SetActive(true);
             }
         }
+
+        if (_mission)
+            mark.SetActive(true);
         
     }
 
@@ -36,8 +44,11 @@ public class MainMissionPoint : MonoBehaviour
     {
         if (collision.collider != null && collision.collider.name == "Player")
         {
-            _UI_PressF.SetActive(true);
-            _isOpen = true;
+            if (_mission)
+            {
+                _UI_PressF.SetActive(true);
+                _isOpen = true;
+            }
         }
     }
 

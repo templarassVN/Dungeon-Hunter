@@ -90,7 +90,6 @@ public class SkinItem : MonoBehaviour
             _inbuyZone = true;
         }
     }
-
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.collider != null && collision.collider.name == "Player")
@@ -100,6 +99,4 @@ public class SkinItem : MonoBehaviour
             _inbuyZone = false;
         }
     }
-
-   
 }

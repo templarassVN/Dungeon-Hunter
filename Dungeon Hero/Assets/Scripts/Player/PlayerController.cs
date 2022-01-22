@@ -299,6 +299,18 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public int MaxHealth
+    {
+        get { return maxHealth; }
+        set { maxHealth = value; }
+    }
+
+    public int MaxArmor
+    {
+        get { return maxArmor; }
+        set { maxArmor = value; }
+    }
+
     void getInvisible()
     {
         bodyRenderer.color = new Color(bodyRenderer.color.r, bodyRenderer.color.g, bodyRenderer.color.b, .5f);

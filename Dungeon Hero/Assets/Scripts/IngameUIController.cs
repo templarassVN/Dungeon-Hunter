@@ -30,11 +30,13 @@ public class IngameUIController : MonoBehaviour
     public void ChangeMaxHealth(int amount)
     {
         healthSlider.maxValue = amount;
+        ChangeHealthText();
     }
 
     public void ChangeCurrentHealth(int amount)
     {
         healthSlider.value = amount;
+        ChangeHealthText();
     }
 
     public void ChangeHealthText()

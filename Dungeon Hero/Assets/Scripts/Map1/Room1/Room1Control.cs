@@ -8,8 +8,10 @@ public class Room1Control : MonoBehaviour
     Timer timer;
     [SerializeField]
     SpawnEnemy spawnEnemyWave3;
+    [SerializeField]
     bool _challengeFinished = false;
     // Start is called before the first frame update
+    
     void Start()
     {
         
@@ -22,6 +24,7 @@ public class Room1Control : MonoBehaviour
         {
             if(timer.Timeleft > 0)
             {
+                timer.Stop();
                 _challengeFinished = true;
             }
         }
@@ -29,6 +32,7 @@ public class Room1Control : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         timer.SetandRun();
+        GetComponent<BoxCollider2D>().enabled = false;
     }
 
     public bool Completechallenge()
