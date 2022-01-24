@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class SecrecRoom1 : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class SecrecRoom1 : MonoBehaviour
     bool _isFinished = false;
     [SerializeField]
     GameObject Door;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,4 +29,11 @@ public class SecrecRoom1 : MonoBehaviour
         get { return _isFinished; }
         set { _isFinished = value; }
     }
+
+    public void StartBreakInto()
+    {
+        GetComponent<PlayableDirector>().Play();
+    }
+
+
 }
