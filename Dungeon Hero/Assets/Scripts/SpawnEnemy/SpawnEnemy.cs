@@ -82,7 +82,7 @@ public class SpawnEnemy : MonoBehaviour
         // upgrade streng of enemies
         for (int i = 0; i < enemyType.Length; i++)
         {
-            enemyType[i].GetComponent<EnemyController>().UpgradeStreng();
+            enemyType[i].GetComponent<EnemyController>().UpgradeStreng(100, 1, 0.1f);
         }
 
         // upgrade rate hard enemies
