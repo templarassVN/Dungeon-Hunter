@@ -22,6 +22,7 @@ public class ControlCutScene : MonoBehaviour
         }
         if (GameStateManager.Instance.isFinishMap1)
             StartCoroutine(PlayFinishMap1());
+        MusicManager.Instance.PlaySheet(1);
     }
 
     private void Update()
