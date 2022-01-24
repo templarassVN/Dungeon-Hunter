@@ -6,6 +6,7 @@ public class HitBoxController : MonoBehaviour
 {
     // Start is called before the first frame update
     public float castTime = 1f;
+    public int damage = 1;
     void Start()
     {
     }
@@ -26,7 +27,7 @@ public class HitBoxController : MonoBehaviour
         PlayerController playerController = other.GetComponent<PlayerController>();
         if (playerController != null)
         {
-            playerController.getHit(-1);
+            playerController.getHit(-damage);
         }
     }
 }

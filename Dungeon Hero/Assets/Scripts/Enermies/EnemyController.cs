@@ -40,7 +40,7 @@ public class EnemyController : MonoBehaviour
     protected float itemDropPercent;
 
     // Start is called before the first frame update
-    protected void Start()
+    virtual protected void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -50,7 +50,7 @@ public class EnemyController : MonoBehaviour
     }
 
     // Update is called once per frame
-    protected void Update()
+    virtual protected void Update()
     {
         if (body.isVisible)
         {
@@ -116,9 +116,9 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void UpgradeStreng() {
-        health += 50;
-        speed += 1;
-        attackSpeed -= 0.5f;
+    public void UpgradeStreng(int plusHealth, int plusSpeed, float plusAttackSpeed) {
+        health += plusHealth;
+        speed += plusSpeed;
+        attackSpeed -= plusAttackSpeed;
     }
 }
