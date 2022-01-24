@@ -22,9 +22,6 @@ public class NPC : MonoBehaviour
         Dialog.SetActive(false);
     }
 
-
-
-
     private void Update()
     {
         if (_isOpen && GameStateManager.Instance.State.Equals(GameState.PLAY))
@@ -35,9 +32,7 @@ public class NPC : MonoBehaviour
                 Dialog.SetActive(true);
             }
         }
-
     }
-
 
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -17,8 +17,7 @@ public class DialogManager : MonoBehaviour
     GameObject Gate1;
     [SerializeField]
     GameObject Gate2;
-
-    
+  
     /// <summary>
     /// Variable
     /// </summary>
@@ -94,7 +93,6 @@ public class DialogManager : MonoBehaviour
             {
                 Coin.SetActive(true);
                 Gate1.SetActive(true);
-                Gate2.SetActive(true);
             }
             _textDisplay.text = "";
             StartCoroutine(_typingCoroutine);
