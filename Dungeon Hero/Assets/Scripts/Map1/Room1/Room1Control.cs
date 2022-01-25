@@ -26,8 +26,11 @@ public class Room1Control : MonoBehaviour
             {
                 timer.Stop();
                 _challengeFinished = true;
+                
             }
         }
+        if(_challengeFinished)
+            EffectManager.Instance.FinishChallenge();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

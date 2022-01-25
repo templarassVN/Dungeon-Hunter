@@ -10,7 +10,7 @@ public class Room0Manager : MonoBehaviour
     void Start()
     {
         MusicManager.Instance.PlaySheet(2);
-        
+
     }
 
     // Update is called once per frame

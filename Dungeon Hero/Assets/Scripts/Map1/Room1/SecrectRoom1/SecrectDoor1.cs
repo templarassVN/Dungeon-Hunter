@@ -31,14 +31,14 @@ public class SecrectDoor1 : MonoBehaviour
                 gameObject.SetActive(false);
                 if (PlayerController.instance.transform.position.y < transform.position.y)
                 {
-
-                    Camera.main.orthographicSize = 2.5f;
                     _secrectRoom1.GetComponent<SecrecRoom1>().StartBreakInto();
-                    MusicManager.Instance.changeGroup(3);
+
                 }
                 else
+                {
+                    MusicManager.Instance.changeGroup(2);
                     Camera.main.orthographicSize = 5f;
-                
+                }
             }
         }
     }

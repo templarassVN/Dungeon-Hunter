@@ -31,6 +31,7 @@ public class Timer : MonoBehaviour
     }
     public void SetandRun()
     {
+        EffectManager.Instance.PlaySFX(8);
         _remainDur = Duration;
         _text.SetActive(true);
         StartCoroutine(cd);
