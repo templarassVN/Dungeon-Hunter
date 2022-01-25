@@ -22,6 +22,10 @@ public class BossController : EnemyController
     float timeDamageColision = 1f;
     float damageColisionCounter = 1f;
 
+    // spin bullet
+    public float spin_speed = 100f;
+    float time;
+
     void Awake()
     {
         instance = this;
@@ -59,6 +63,15 @@ public class BossController : EnemyController
         }
     }
 
+    void FixedUpdate()
+    {
+        if (actions[currentAction].shouldSpinShoot)
+        {
+            time += Time.fixedDeltaTime;
+            attackPoint.transform.rotation = Quaternion.Euler(0, 0, time * spin_speed);
+        }
+    }
+
     protected override void Move()
     {
         // handle movement
@@ -82,15 +95,43 @@ public class BossController : EnemyController
     protected override void Attack()
     {
         // handle shooting
-        if (actions[currentAction].shoutShoot)
+        if (actions[currentAction].shouldShoot)
         {
-            shotCounter -= Time.deltaTime;
-            if (shotCounter <= 0)
+            if (!actions[currentAction].attackType2)
             {
-                shotCounter = actions[currentAction].timeBetweenShots;
-                foreach (Transform t in actions[currentAction].shotPoints)
+                shotCounter -= Time.deltaTime;
+                if (shotCounter <= 0)
                 {
-                    Instantiate(actions[currentAction].itemsToShould, t.position, t.rotation);
+                    shotCounter = actions[currentAction].timeBetweenShots;
+                    foreach (Transform t in actions[currentAction].shotPoints)
+                    {
+                        Instantiate(actions[currentAction].itemsToShould[0], t.position, t.rotation);
+                    }
+                }
+                if (actions[currentAction].shouldSummon) {
+                    Instantiate(actions[currentAction].itemsToSummon, transform.position + new Vector3(3, -3, 0), transform.rotation);
+                    Instantiate(actions[currentAction].itemsToSummon, transform.position + new Vector3(3, 3, 0), transform.rotation);
+                    Instantiate(actions[currentAction].itemsToSummon, transform.position + new Vector3(-3, 3, 0), transform.rotation);
+                    Instantiate(actions[currentAction].itemsToSummon, transform.position + new Vector3(-3, -3, 0), transform.rotation);
+                    actions[currentAction].shouldSummon = false;
+                }
+            }
+            else
+            {
+                shotCounter -= Time.deltaTime;
+                if (shotCounter <= 0)
+                {
+                    shotCounter = actions[currentAction].timeBetweenShots;
+                    for (int i = 0; i < actions[currentAction].numberBullet2; i++)
+                    {
+                        int randomTypeBullet = Random.Range(0, actions[currentAction].itemsToShould.Length);
+                        float randomPositionX = Random.Range(-3f, 3f);
+                        float randomPositionY = Random.Range(-3f, 3f);
+                        float positionX = attackPoint.position.x + randomPositionX;
+                        float positionY = attackPoint.position.y + randomPositionY;
+                        GameObject bullet = actions[currentAction].itemsToShould[randomTypeBullet];
+                        Instantiate(bullet, new Vector2(positionX, positionY), attackPoint.rotation);
+                    }
                 }
             }
         }
@@ -145,10 +186,18 @@ public class BossAction
     public float moveSpeed;
 
     // shoot
-    public bool shoutShoot;
-    public GameObject itemsToShould;
+    public bool shouldShoot;
+    public bool shouldSpinShoot;
+    public GameObject[] itemsToShould;
     public float timeBetweenShots;
     public Transform[] shotPoints;
+
+    public bool attackType2;
+    public int numberBullet2;
+
+    // summon
+    public bool shouldSummon;
+    public GameObject itemsToSummon;
 }
 
 [System.Serializable]

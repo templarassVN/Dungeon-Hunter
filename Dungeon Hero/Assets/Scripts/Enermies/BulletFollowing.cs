@@ -21,8 +21,6 @@ public class BulletFollowing : EnermyBulletController
             direction = PlayerController.instance.transform.position - transform.position;
             direction.Normalize();
             transform.position += direction * speed * Time.deltaTime;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            //tail.transform.rotation = Quaternion.Euler(angle + 180, 90, 0);
         }
         else
         {
