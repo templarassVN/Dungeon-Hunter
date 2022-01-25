@@ -761,7 +761,6 @@ Transform:
   - {fileID: 1840277726}
   - {fileID: 213158418}
   - {fileID: 1908547078}
-  - {fileID: 1803961785}
   m_Father: {fileID: 762098467}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1043,7 +1042,7 @@ GameObject:
   m_Component:
   - component: {fileID: 632176335}
   m_Layer: 0
-  m_Name: Point (1)
+  m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1295,7 +1294,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7259d47239655cb4ab177b34abe6adcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   _NewGame: 1
+  _finishMap1: 0
 --- !u!4 &730300533
 Transform:
   m_ObjectHideFlags: 0
@@ -1727,7 +1728,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1716323361
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 6954847684770999777, guid: ff04e4a59675fad49995a9d7f974bc3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -25438,12 +25439,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803961784}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.69, y: -22, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -11.839999, y: -9.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 320295466}
-  m_RootOrder: 5
+  m_Father: {fileID: 1908547078}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1840277725
 GameObject:
@@ -25635,7 +25636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2011bddbf0558a94699bdedc07996431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
+  health: 2000
   speed: 3
   rateAppear: 1
   rangeToChasePlayer: 7
@@ -25665,7 +25666,9 @@ MonoBehaviour:
       shotPoints: []
       attackType2: 0
       numberBullet2: 0
-    - actionLength: 5
+      shouldSummon: 0
+      itemsToSummon: {fileID: 0}
+    - actionLength: 2
       shouldMove: 0
       shouldChasePlayer: 0
       shouldMoveToPoint: 0
@@ -25674,9 +25677,8 @@ MonoBehaviour:
       shouldShoot: 1
       shouldSpinShoot: 0
       itemsToShould:
-      - {fileID: 3780252977144584121, guid: b03523de11766df43b7cc3e80a4c1e0e, type: 3}
-      - {fileID: 7380340736961279850, guid: ab853903f77c8dd4bb5ae1f376ca6be2, type: 3}
-      timeBetweenShots: 1
+      - {fileID: 50485266842393658, guid: b5bca1ef1571d044f8bea3b3cbf5551d, type: 3}
+      timeBetweenShots: 0.2
       shotPoints:
       - {fileID: 166328092}
       - {fileID: 1171699730}
@@ -25686,9 +25688,11 @@ MonoBehaviour:
       - {fileID: 1632251876}
       - {fileID: 1790042647}
       - {fileID: 89079216}
-      attackType2: 1
+      attackType2: 0
       numberBullet2: 10
-    endSequenceHealth: 800
+      shouldSummon: 0
+      itemsToSummon: {fileID: 0}
+    endSequenceHealth: 1600
   - actions:
     - actionLength: 5
       shouldMove: 1
@@ -25700,7 +25704,7 @@ MonoBehaviour:
       shouldSpinShoot: 0
       itemsToShould:
       - {fileID: 50485266842393658, guid: b5bca1ef1571d044f8bea3b3cbf5551d, type: 3}
-      timeBetweenShots: 0.5
+      timeBetweenShots: 0.2
       shotPoints:
       - {fileID: 166328092}
       - {fileID: 1171699730}
@@ -25712,6 +25716,130 @@ MonoBehaviour:
       - {fileID: 89079216}
       attackType2: 0
       numberBullet2: 0
+      shouldSummon: 0
+      itemsToSummon: {fileID: 0}
+    - actionLength: 5
+      shouldMove: 1
+      shouldChasePlayer: 0
+      shouldMoveToPoint: 1
+      pointToMove: {fileID: 632176335}
+      moveSpeed: 5
+      shouldShoot: 1
+      shouldSpinShoot: 0
+      itemsToShould:
+      - {fileID: 50485266842393658, guid: b5bca1ef1571d044f8bea3b3cbf5551d, type: 3}
+      timeBetweenShots: 0.2
+      shotPoints:
+      - {fileID: 166328092}
+      - {fileID: 1171699730}
+      - {fileID: 280628628}
+      - {fileID: 610658473}
+      - {fileID: 1115885225}
+      - {fileID: 1632251876}
+      - {fileID: 1790042647}
+      - {fileID: 89079216}
+      attackType2: 0
+      numberBullet2: 0
+      shouldSummon: 0
+      itemsToSummon: {fileID: 0}
+    - actionLength: 2
+      shouldMove: 1
+      shouldChasePlayer: 0
+      shouldMoveToPoint: 1
+      pointToMove: {fileID: 1840277726}
+      moveSpeed: 5
+      shouldShoot: 1
+      shouldSpinShoot: 0
+      itemsToShould:
+      - {fileID: 50485266842393658, guid: b5bca1ef1571d044f8bea3b3cbf5551d, type: 3}
+      timeBetweenShots: 0.2
+      shotPoints:
+      - {fileID: 166328092}
+      - {fileID: 1171699730}
+      - {fileID: 280628628}
+      - {fileID: 610658473}
+      - {fileID: 1115885225}
+      - {fileID: 1632251876}
+      - {fileID: 1790042647}
+      - {fileID: 89079216}
+      attackType2: 0
+      numberBullet2: 0
+      shouldSummon: 0
+      itemsToSummon: {fileID: 0}
+    - actionLength: 5
+      shouldMove: 1
+      shouldChasePlayer: 0
+      shouldMoveToPoint: 1
+      pointToMove: {fileID: 213158418}
+      moveSpeed: 5
+      shouldShoot: 1
+      shouldSpinShoot: 0
+      itemsToShould:
+      - {fileID: 50485266842393658, guid: b5bca1ef1571d044f8bea3b3cbf5551d, type: 3}
+      timeBetweenShots: 0.2
+      shotPoints:
+      - {fileID: 166328092}
+      - {fileID: 1171699730}
+      - {fileID: 280628628}
+      - {fileID: 610658473}
+      - {fileID: 1115885225}
+      - {fileID: 1632251876}
+      - {fileID: 1790042647}
+      - {fileID: 89079216}
+      attackType2: 0
+      numberBullet2: 0
+      shouldSummon: 0
+      itemsToSummon: {fileID: 0}
+    - actionLength: 5
+      shouldMove: 1
+      shouldChasePlayer: 0
+      shouldMoveToPoint: 1
+      pointToMove: {fileID: 1908547078}
+      moveSpeed: 5
+      shouldShoot: 1
+      shouldSpinShoot: 0
+      itemsToShould:
+      - {fileID: 50485266842393658, guid: b5bca1ef1571d044f8bea3b3cbf5551d, type: 3}
+      timeBetweenShots: 0.2
+      shotPoints:
+      - {fileID: 166328092}
+      - {fileID: 1171699730}
+      - {fileID: 280628628}
+      - {fileID: 610658473}
+      - {fileID: 1115885225}
+      - {fileID: 1632251876}
+      - {fileID: 1790042647}
+      - {fileID: 89079216}
+      attackType2: 0
+      numberBullet2: 0
+      shouldSummon: 0
+      itemsToSummon: {fileID: 0}
+    - actionLength: 5
+      shouldMove: 1
+      shouldChasePlayer: 0
+      shouldMoveToPoint: 1
+      pointToMove: {fileID: 1803961785}
+      moveSpeed: 5
+      shouldShoot: 1
+      shouldSpinShoot: 0
+      itemsToShould:
+      - {fileID: 50485266842393658, guid: b5bca1ef1571d044f8bea3b3cbf5551d, type: 3}
+      timeBetweenShots: 0.2
+      shotPoints:
+      - {fileID: 166328092}
+      - {fileID: 1171699730}
+      - {fileID: 280628628}
+      - {fileID: 610658473}
+      - {fileID: 1115885225}
+      - {fileID: 1632251876}
+      - {fileID: 1790042647}
+      - {fileID: 89079216}
+      attackType2: 0
+      numberBullet2: 0
+      shouldSummon: 0
+      itemsToSummon: {fileID: 0}
+    endSequenceHealth: 1200
+  - actions:
     - actionLength: 5
       shouldMove: 1
       shouldChasePlayer: 0
@@ -25734,16 +25862,73 @@ MonoBehaviour:
       - {fileID: 89079216}
       attackType2: 0
       numberBullet2: 0
+      shouldSummon: 0
+      itemsToSummon: {fileID: 0}
+    endSequenceHealth: 1100
+  - actions:
+    - actionLength: 5
+      shouldMove: 0
+      shouldChasePlayer: 0
+      shouldMoveToPoint: 0
+      pointToMove: {fileID: 632176335}
+      moveSpeed: 5
+      shouldShoot: 1
+      shouldSpinShoot: 0
+      itemsToShould:
+      - {fileID: 50485266842393658, guid: b5bca1ef1571d044f8bea3b3cbf5551d, type: 3}
+      timeBetweenShots: 0.5
+      shotPoints:
+      - {fileID: 166328092}
+      - {fileID: 1171699730}
+      - {fileID: 280628628}
+      - {fileID: 610658473}
+      - {fileID: 1115885225}
+      - {fileID: 1632251876}
+      - {fileID: 1790042647}
+      - {fileID: 89079216}
+      attackType2: 0
+      numberBullet2: 0
+      shouldSummon: 1
+      itemsToSummon: {fileID: 5662073479806770246, guid: bfa80bda165b6714b8e7190a71963148, type: 3}
+    endSequenceHealth: 1100
+  - actions:
+    - actionLength: 5
+      shouldMove: 0
+      shouldChasePlayer: 0
+      shouldMoveToPoint: 0
+      pointToMove: {fileID: 632176335}
+      moveSpeed: 5
+      shouldShoot: 1
+      shouldSpinShoot: 0
+      itemsToShould:
+      - {fileID: 50485266842393658, guid: b5bca1ef1571d044f8bea3b3cbf5551d, type: 3}
+      timeBetweenShots: 0.5
+      shotPoints:
+      - {fileID: 166328092}
+      - {fileID: 1171699730}
+      - {fileID: 280628628}
+      - {fileID: 610658473}
+      - {fileID: 1115885225}
+      - {fileID: 1632251876}
+      - {fileID: 1790042647}
+      - {fileID: 89079216}
+      attackType2: 0
+      numberBullet2: 0
+      shouldSummon: 0
+      itemsToSummon: {fileID: 0}
+    endSequenceHealth: 800
+  - actions:
     - actionLength: 2
       shouldMove: 1
-      shouldChasePlayer: 0
-      shouldMoveToPoint: 1
-      pointToMove: {fileID: 1840277726}
-      moveSpeed: 5
-      shouldShoot: 1
+      shouldChasePlayer: 1
+      shouldMoveToPoint: 0
+      pointToMove: {fileID: 632176335}
+      moveSpeed: 4
+      shouldShoot: 0
       shouldSpinShoot: 0
       itemsToShould:
-      - {fileID: 50485266842393658, guid: b5bca1ef1571d044f8bea3b3cbf5551d, type: 3}
+      - {fileID: 3780252977144584121, guid: b03523de11766df43b7cc3e80a4c1e0e, type: 3}
+      - {fileID: 7380340736961279850, guid: ab853903f77c8dd4bb5ae1f376ca6be2, type: 3}
       timeBetweenShots: 0.5
       shotPoints:
       - {fileID: 166328092}
@@ -25754,18 +25939,48 @@ MonoBehaviour:
       - {fileID: 1632251876}
       - {fileID: 1790042647}
       - {fileID: 89079216}
-      attackType2: 0
-      numberBullet2: 0
+      attackType2: 1
+      numberBullet2: 12
+      shouldSummon: 0
+      itemsToSummon: {fileID: 0}
+    - actionLength: 5
+      shouldMove: 0
+      shouldChasePlayer: 0
+      shouldMoveToPoint: 0
+      pointToMove: {fileID: 632176335}
+      moveSpeed: 5
+      shouldShoot: 1
+      shouldSpinShoot: 0
+      itemsToShould:
+      - {fileID: 3780252977144584121, guid: b03523de11766df43b7cc3e80a4c1e0e, type: 3}
+      - {fileID: 7380340736961279850, guid: ab853903f77c8dd4bb5ae1f376ca6be2, type: 3}
+      timeBetweenShots: 1
+      shotPoints:
+      - {fileID: 166328092}
+      - {fileID: 1171699730}
+      - {fileID: 280628628}
+      - {fileID: 610658473}
+      - {fileID: 1115885225}
+      - {fileID: 1632251876}
+      - {fileID: 1790042647}
+      - {fileID: 89079216}
+      attackType2: 1
+      numberBullet2: 20
+      shouldSummon: 0
+      itemsToSummon: {fileID: 0}
+    endSequenceHealth: 400
+  - actions:
     - actionLength: 5
       shouldMove: 1
       shouldChasePlayer: 0
       shouldMoveToPoint: 1
-      pointToMove: {fileID: 213158418}
+      pointToMove: {fileID: 632176335}
       moveSpeed: 5
       shouldShoot: 1
       shouldSpinShoot: 0
       itemsToShould:
-      - {fileID: 50485266842393658, guid: b5bca1ef1571d044f8bea3b3cbf5551d, type: 3}
+      - {fileID: 3780252977144584121, guid: b03523de11766df43b7cc3e80a4c1e0e, type: 3}
+      - {fileID: 7380340736961279850, guid: ab853903f77c8dd4bb5ae1f376ca6be2, type: 3}
       timeBetweenShots: 0.5
       shotPoints:
       - {fileID: 166328092}
@@ -25777,18 +25992,22 @@ MonoBehaviour:
       - {fileID: 1790042647}
       - {fileID: 89079216}
       attackType2: 0
-      numberBullet2: 0
+      numberBullet2: 20
+      shouldSummon: 0
+      itemsToSummon: {fileID: 0}
+    endSequenceHealth: 350
+  - actions:
     - actionLength: 5
-      shouldMove: 1
+      shouldMove: 0
       shouldChasePlayer: 0
-      shouldMoveToPoint: 1
-      pointToMove: {fileID: 1908547078}
+      shouldMoveToPoint: 0
+      pointToMove: {fileID: 632176335}
       moveSpeed: 5
       shouldShoot: 1
-      shouldSpinShoot: 0
+      shouldSpinShoot: 1
       itemsToShould:
       - {fileID: 50485266842393658, guid: b5bca1ef1571d044f8bea3b3cbf5551d, type: 3}
-      timeBetweenShots: 0.5
+      timeBetweenShots: 0.07
       shotPoints:
       - {fileID: 166328092}
       - {fileID: 1171699730}
@@ -25799,18 +26018,20 @@ MonoBehaviour:
       - {fileID: 1790042647}
       - {fileID: 89079216}
       attackType2: 0
-      numberBullet2: 0
-    - actionLength: 5
-      shouldMove: 1
+      numberBullet2: 20
+      shouldSummon: 0
+      itemsToSummon: {fileID: 0}
+    - actionLength: 2
+      shouldMove: 0
       shouldChasePlayer: 0
-      shouldMoveToPoint: 1
-      pointToMove: {fileID: 1803961785}
+      shouldMoveToPoint: 0
+      pointToMove: {fileID: 632176335}
       moveSpeed: 5
-      shouldShoot: 1
+      shouldShoot: 0
       shouldSpinShoot: 0
       itemsToShould:
       - {fileID: 50485266842393658, guid: b5bca1ef1571d044f8bea3b3cbf5551d, type: 3}
-      timeBetweenShots: 0.5
+      timeBetweenShots: 0.05
       shotPoints:
       - {fileID: 166328092}
       - {fileID: 1171699730}
@@ -25821,8 +26042,10 @@ MonoBehaviour:
       - {fileID: 1790042647}
       - {fileID: 89079216}
       attackType2: 0
-      numberBullet2: 0
-    endSequenceHealth: 600
+      numberBullet2: 20
+      shouldSummon: 0
+      itemsToSummon: {fileID: 0}
+    endSequenceHealth: 0
   spin_speed: 500
 --- !u!50 &1854107204
 Rigidbody2D:
@@ -26018,7 +26241,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.85, y: -12.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1803961785}
   m_Father: {fileID: 320295466}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
