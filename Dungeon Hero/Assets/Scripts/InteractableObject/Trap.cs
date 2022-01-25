@@ -14,8 +14,7 @@ public class Trap : MonoBehaviour
         if(!activable)
             _isActive = true;
             
-       
-        GetComponent<Animator>().SetBool("Active", true);
+        GetComponent<Animator>().SetBool("Active", _isActive);
         
     }
 
