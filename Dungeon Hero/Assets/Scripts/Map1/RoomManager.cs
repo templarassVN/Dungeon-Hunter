@@ -49,11 +49,15 @@ public class RoomManager : MonoBehaviour
             }
         }
         if (spawnEnemyWave3.currentEnemy == 0) {
+           
             _isFinished = true;
             if (countTimeClear > 0) {
                 clear.SetActive(true);
             }
         }
+
+        if(_isFinished)
+            EffectManager.Instance.FinishRoom();
     }
 
     public bool isFinished

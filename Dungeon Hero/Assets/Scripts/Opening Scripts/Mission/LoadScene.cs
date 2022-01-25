@@ -37,7 +37,10 @@ public class LoadScene : MonoBehaviour
 
     void Load_Scene()
     {
-        _player.transform.position = new Vector3(-24f, 3f, 0);
+        if(_numsSce == 1)
+            _player.transform.position = new Vector3(-24f, 3f, 0);
+        else if (_numsSce == 0)
+            _player.transform.position = new Vector3(5f, -2f, 0);
         _player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         SceneManager.LoadScene(_numsSce);
         Debug.Log("a");

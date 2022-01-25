@@ -24,9 +24,18 @@ public class MusicManager : MonoBehaviour
     void Start()
     {
         _main = GetComponent<AudioSource>();
+        
     }
 
-    public void Map(int n)
+    public void changeGroup(int n)
+    {
+        if (name.Equals(""))
+            return;
+        _main.outputAudioMixerGroup = _mainmixer.FindMatchingGroups("Master")[n];
+        Debug.Log(_main.outputAudioMixerGroup);
+    }
+
+    public void PlaySheet(int n)
     {
         _main.clip = _sound[n];
         _main.Play();

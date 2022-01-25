@@ -23,6 +23,7 @@ public class Gun : MonoBehaviour
             timeCount -= Time.deltaTime;
             if (timeCount <= 0)
             {
+                EffectManager.Instance.PlaySFX(1);
                 Instantiate(bullet, firePos.position, firePos.rotation);
                 timeCount = attackSpeed;
             }

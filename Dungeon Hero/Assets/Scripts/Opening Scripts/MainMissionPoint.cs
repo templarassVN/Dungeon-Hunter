@@ -14,7 +14,6 @@ public class MainMissionPoint : MonoBehaviour
     bool _mission = true;
     bool _isOpen = false;
 
-    
     void Start()
     {
         Dialog.SetActive(false);
@@ -37,8 +36,6 @@ public class MainMissionPoint : MonoBehaviour
             mark.SetActive(true);
         
     }
-
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
