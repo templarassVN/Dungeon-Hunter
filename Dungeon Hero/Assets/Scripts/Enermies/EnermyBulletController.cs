@@ -22,7 +22,6 @@ public class EnermyBulletController : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other);
         Destroy(gameObject);
         PlayerController playerController = other.GetComponent<PlayerController>();
         if (playerController != null)
