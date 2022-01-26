@@ -5,8 +5,8 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float _speed = 5f;
-    public bool active = false;
+   
+    
 
     Camera main;
     [SerializeField]
@@ -26,5 +26,7 @@ public class CameraControl : MonoBehaviour
         transform.position = new Vector3(_Player.transform.position.x,
                                            _Player.transform.position.y,
                                            transform.position.z);
+        
+
     }
 }

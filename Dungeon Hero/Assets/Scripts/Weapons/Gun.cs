@@ -8,11 +8,12 @@ public class Gun : MonoBehaviour
     public Transform firePos;
     public float attackSpeed;
     private float timeCount = 0;
+    Camera _main_cam;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _main_cam = Camera.main;
     }
 
     // Update is called once per frame

@@ -402,4 +402,16 @@ public class PlayerController : MonoBehaviour
         get { return coin; }
         set { coin = value; }
     }
+
+    public int maxArmorPoint
+    {
+        get { return maxArmor; }
+        set { maxArmor = value; }
+    }
+
+    public int curArmorPoint
+    {
+        get { return currentArmor; }
+        set { currentArmor = value; }
+    }
 }
