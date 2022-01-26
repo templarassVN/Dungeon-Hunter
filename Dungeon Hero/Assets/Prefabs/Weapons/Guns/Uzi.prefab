@@ -78,6 +78,8 @@ MonoBehaviour:
   bullet: {fileID: 4918472159521706491, guid: 0bbcb794c2cbac3488ef2cc7b531241d, type: 3}
   firePos: {fileID: 3811400777151655971}
   attackSpeed: 0.2
+  weaponName: Uzi
+  gunUI: {fileID: 1547619706621703405, guid: f72804754a2106a4884d758772ef2a02, type: 3}
 --- !u!212 &2502569634220582572
 SpriteRenderer:
   m_ObjectHideFlags: 0

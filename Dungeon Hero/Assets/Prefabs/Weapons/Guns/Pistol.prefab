@@ -48,6 +48,8 @@ MonoBehaviour:
   bullet: {fileID: 6769369233010090294, guid: e80a68eb1be77764c906c78ffad66c77, type: 3}
   firePos: {fileID: 8619632387501002237}
   attackSpeed: 0.5
+  weaponName: Pistol
+  gunUI: {fileID: 262978286505467586, guid: f72804754a2106a4884d758772ef2a02, type: 3}
 --- !u!212 &7043960762772167538
 SpriteRenderer:
   m_ObjectHideFlags: 0

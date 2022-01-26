@@ -5464,7 +5464,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 299746175}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ba481bc2b7516140b8f7a108eaa2b53, type: 3}
   m_Name: 
@@ -10777,7 +10777,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6646664995605830107, guid: e62b26903c437b54cbbd9a743584cf55, type: 3}
   m_PrefabInstance: {fileID: 1522252069}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1325139212}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c67894488be68c47984f046480fdeab, type: 3}
@@ -25345,12 +25345,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1913770393849200502, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
       propertyPath: availableGun.Array.size
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1913770393849200502, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
       propertyPath: availableGun.Array.data[0]
       value: 
-      objectReference: {fileID: 360730972}
+      objectReference: {fileID: 30244269}
     - target: {fileID: 1913770393849200502, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
       propertyPath: availableGun.Array.data[1]
       value: 
@@ -25361,6 +25361,10 @@ PrefabInstance:
       objectReference: {fileID: 896431099}
     - target: {fileID: 1913770393849200502, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
       propertyPath: availableGun.Array.data[3]
+      value: 
+      objectReference: {fileID: 360730972}
+    - target: {fileID: 1913770393849200502, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
+      propertyPath: availableGun.Array.data[4]
       value: 
       objectReference: {fileID: 30244269}
     - target: {fileID: 4507325858006600349, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
@@ -25734,9 +25738,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7387712800a0e8c429fa819c70d8f57d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageGun: {fileID: 0}
   _offer: {fileID: 1785899327}
   _price: {fileID: 432592091}
   _cost: 100
+  itemToBuy: {fileID: 0}
 --- !u!1 &872153601
 GameObject:
   m_ObjectHideFlags: 0
@@ -31034,11 +31040,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8960068250868373513, guid: a0765714e683bbf4c8829d46fdb30c7c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 125.314
+      value: 125.314026
       objectReference: {fileID: 0}
     - target: {fileID: 8960068250868373513, guid: a0765714e683bbf4c8829d46fdb30c7c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -22.772
+      value: -22.771973
       objectReference: {fileID: 0}
     - target: {fileID: 8960068250870428931, guid: a0765714e683bbf4c8829d46fdb30c7c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -38429,7 +38435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 686019987489218034, guid: 59f8d1d3150266b42883548f6c48ce64, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4777390731437250630, guid: 59f8d1d3150266b42883548f6c48ce64, type: 3}
       propertyPath: m_RootOrder
@@ -38486,6 +38492,11 @@ GameObject:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2695675147591687756, guid: e845ada891406cd4fb27d084ad93e87c, type: 3}
   m_PrefabInstance: {fileID: 1461456223}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1325139212 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5404036599370113068, guid: e62b26903c437b54cbbd9a743584cf55, type: 3}
+  m_PrefabInstance: {fileID: 1522252069}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1360745643
 GameObject:
@@ -38632,7 +38643,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: HP++
+  m_Text: Uzi
 --- !u!222 &1379276952
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -43861,6 +43872,10 @@ PrefabInstance:
     - target: {fileID: 5404036599370113068, guid: e62b26903c437b54cbbd9a743584cf55, type: 3}
       propertyPath: m_Name
       value: Uzi
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404036599370113068, guid: e62b26903c437b54cbbd9a743584cf55, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e62b26903c437b54cbbd9a743584cf55, type: 3}
@@ -64105,9 +64120,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7387712800a0e8c429fa819c70d8f57d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageGun: {fileID: 329160927}
   _offer: {fileID: 1148382210}
   _price: {fileID: 872153603}
   _cost: 100
+  itemToBuy: {fileID: 1325139212}
 --- !u!1 &2038466760 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2695675147591687757, guid: e845ada891406cd4fb27d084ad93e87c, type: 3}
