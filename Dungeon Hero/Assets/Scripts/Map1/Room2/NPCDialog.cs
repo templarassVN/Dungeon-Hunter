@@ -13,6 +13,7 @@ public class NPCDialog : MonoBehaviour
     Text _textDisplay;
     [SerializeField]
     NPC _talker;
+    [SerializeField] GameObject rain;
     
 
     /// <summary>
@@ -38,7 +39,8 @@ public class NPCDialog : MonoBehaviour
 
     private void Start()
     {
-        
+        rain.SetActive(false) ;
+
     }
 
 
@@ -89,6 +91,8 @@ public class NPCDialog : MonoBehaviour
     public void NextSentence()
     {
         index += 1;
+        if (index == 2)
+            rain.SetActive(true);
         if (index >= _Sentences.Length)
         {
             _talker.isAccepted = true;
@@ -99,6 +103,7 @@ public class NPCDialog : MonoBehaviour
         {
             _textDisplay.text = "";
             StartCoroutine(_typingCoroutine);
+
         }
     }
 
