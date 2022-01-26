@@ -26,12 +26,12 @@ public class PlayerController : MonoBehaviour
     public List<Gun> availableGun = new List<Gun>();
     private int currentGun = 0;
 
-/*
-    //Shooting 
-    public GameObject bullet;
-    public Transform firePos;
-    public float attackSpeed;
-    private float timeCount = 0;*/
+    /*
+        //Shooting 
+        public GameObject bullet;
+        public Transform firePos;
+        public float attackSpeed;
+        private float timeCount = 0;*/
 
     //Animator
     private Animator animator;
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     // Health & Armor
     private int maxHealth = 5;
     private int currentHealth;
-    
+
     [SerializeField]
     private int maxArmor = 7;
     private int currentArmor = 0;
@@ -79,6 +79,9 @@ public class PlayerController : MonoBehaviour
     private float speedUpCoolCounter;
 
     private int coin = 0;
+
+    private bool _revive = false;
+    public bool Reviable { get => _revive; set => _revive = value; }
 
     public int CurrentHealth { get => currentHealth; set => currentHealth = value; }
 
@@ -117,6 +120,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (currentHealth <= 0) {
+            if (_revive)
+
             return;
         }
         //Moving & Rotate Character
