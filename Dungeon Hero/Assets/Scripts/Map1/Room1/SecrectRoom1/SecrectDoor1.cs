@@ -25,11 +25,20 @@ public class SecrectDoor1 : MonoBehaviour
     {
         if (_isOpen && GameStateManager.Instance.State.Equals(GameState.PLAY))
         {
-
             if (Input.GetKey(KeyCode.E))
             {
                 _secrectRoom1.SetActive(true);
                 gameObject.SetActive(false);
+                if (PlayerController.instance.transform.position.y < transform.position.y)
+                {
+                    _secrectRoom1.GetComponent<SecrecRoom1>().StartBreakInto();
+
+                }
+                else
+                {
+                    MusicManager.Instance.changeGroup(2);
+                    Camera.main.orthographicSize = 5f;
+                }
             }
         }
     }

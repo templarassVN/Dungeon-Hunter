@@ -12,28 +12,40 @@ public class Timer : MonoBehaviour
     int _remainDur;
     [SerializeField]
     Text display ;
+    IEnumerator cd;
     // Start is called before the first frame update
     void Start()
     {
         _text.SetActive(false);
         display = _text.GetComponent<Text>();
+        cd = UpdateTimer();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(_remainDur < 0)
+        {
+            Stop();
+        }
     }
     public void SetandRun()
     {
+        EffectManager.Instance.PlaySFX(8);
         _remainDur = Duration;
         _text.SetActive(true);
-        StartCoroutine(UpdateTimer());
+        StartCoroutine(cd);
+    }
+
+    public void Stop()
+    {
+        UpdateUI_display(_remainDur);
+        StopCoroutine(cd);
     }
 
     private IEnumerator UpdateTimer()
     {
-        while(_remainDur > 0)
+        while(_remainDur >= 0)
         {
             UpdateUI_display(_remainDur);
             _remainDur--;

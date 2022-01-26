@@ -13,7 +13,11 @@ public class DialogManager : MonoBehaviour
     Text _textDisplay;
     [SerializeField]
     GameObject Coin;
-
+    [SerializeField]
+    GameObject Gate1;
+    [SerializeField]
+    GameObject Gate2;
+  
     /// <summary>
     /// Variable
     /// </summary>
@@ -34,6 +38,8 @@ public class DialogManager : MonoBehaviour
     private void Start()
     {
         Coin.SetActive(false);
+        Gate1.SetActive(false);
+        Gate2.SetActive(false);
     }
 
 
@@ -57,7 +63,6 @@ public class DialogManager : MonoBehaviour
                     _isTyping = false;
                     _textDisplay.text = _Sentences[index];
                 }
-                
             }
         }
     }
@@ -85,7 +90,10 @@ public class DialogManager : MonoBehaviour
         else
         {
             if (index == 1)
+            {
                 Coin.SetActive(true);
+                Gate1.SetActive(true);
+            }
             _textDisplay.text = "";
             StartCoroutine(_typingCoroutine);
         }

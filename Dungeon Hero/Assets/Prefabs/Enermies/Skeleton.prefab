@@ -212,7 +212,7 @@ MonoBehaviour:
   attackPoint: {fileID: 3864002420056048545}
   body: {fileID: 6961481777078932557}
   itemsToDrop:
-  - {fileID: 4606703673863936565, guid: e5890a8fd04ef5048b5b86f93d63fb8d, type: 3}
+  - {fileID: 6855681847798903372, guid: 65fbf5a661083374585db310df4ec914, type: 3}
   itemDropPercent: 25
 --- !u!1 &8220090768151021186
 GameObject:
@@ -282,9 +282,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1716323361
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayerID: 220316051
+  m_SortingLayer: 1
+  m_SortingOrder: 7
   m_Sprite: {fileID: -7537196482120660328, guid: 02027016afbc5d544ab92ba819bc8094, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

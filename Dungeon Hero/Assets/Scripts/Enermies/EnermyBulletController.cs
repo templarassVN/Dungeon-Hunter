@@ -5,33 +5,33 @@ using UnityEngine;
 public class EnermyBulletController : MonoBehaviour
 {
     public float speed = 3f;
-    Vector3 direction;
+    public int damage = 1;
+    protected Vector3 direction;
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         direction = PlayerController.instance.transform.position - transform.position;
         direction.Normalize();
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         transform.position += direction * speed * Time.deltaTime;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other);
         Destroy(gameObject);
         PlayerController playerController = other.GetComponent<PlayerController>();
         if (playerController != null)
         {
-            playerController.getHit(-1);
+            playerController.getHit(-damage);
         }
     }
 
-    // void OnBecameInvisible()
-    // {
-    //     Destroy(gameObject);
-    // }
+    protected void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }

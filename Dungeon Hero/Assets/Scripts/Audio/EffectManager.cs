@@ -25,6 +25,22 @@ public class EffectManager : MonoBehaviour
         _main = GetComponent<AudioSource>();
     }
 
+    public void PlaySFX(int n)
+    {
+        _main.PlayOneShot(_sound[n]);
+    }
+
+    public void FinishRoom()
+    {
+        _main.clip = _sound[11];
+        _main.Play();
+    }
+
+    public void FinishChallenge()
+    {
+        _main.clip = _sound[10];
+        _main.PlayDelayed(_sound[11].length);
+    }
     public void HighlightButton()
     {
         _main.clip = _sound[0];

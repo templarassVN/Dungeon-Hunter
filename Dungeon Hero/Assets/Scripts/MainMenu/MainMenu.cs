@@ -19,8 +19,8 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MusicManager.Instance.Map(0);
-        _setting.SetActive(false);
+        MusicManager.Instance.PlaySheet(0);
+        _setting.SetActive(false); 
     }
 
     // Update is called once per frame

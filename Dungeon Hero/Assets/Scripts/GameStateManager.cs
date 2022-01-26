@@ -8,9 +8,11 @@ using UnityEngine.SceneManagement;
 public enum GameState { CUTS, MENU, MISSION, PLAY, DEATH }
 public class GameStateManager : MonoBehaviour
 {
-    public bool _NewGame = true;
     private PlayerData data;
     public bool _loadGame = false;
+    [SerializeField] Texture2D sprite;
+    [SerializeField] private bool _NewGame = true;
+    [SerializeField] private bool _finishMap1 = false;
     public GameState State { get; private set; }
     internal PlayerData Data { get => data; set => data = value; }
 
@@ -19,16 +21,17 @@ public class GameStateManager : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         if (Instance == null)
-        {
             Instance = this;
-        }
         else
-        {
             Destroy(gameObject);
-        }
     }
     // Start is called before the first frame update
-    
+
+    private void Start()
+    {
+        Vector2 hotspot = new Vector2(sprite.width / 2, sprite.height / 2);
+        Cursor.SetCursor(sprite, hotspot, CursorMode.Auto);
+    }
     public void SetGameState(GameState state)
     {
         Debug.Log(State);
@@ -75,5 +78,17 @@ public class GameStateManager : MonoBehaviour
             string json = JsonUtility.ToJson(data);
             File.WriteAllText(fullPath + SAVE_FILE, json);
         }
+    }
+
+    public bool IsNewGame
+    {
+        get { return _NewGame; }
+        set { _NewGame = value; }
+    }
+
+    public bool isFinishMap1
+    {
+        get { return _finishMap1; }
+        set { _finishMap1 = value; }
     }
 }

@@ -13,9 +13,9 @@ public class Coin : MonoBehaviour
         PlayerController playerController = collision.GetComponent<PlayerController>();
         if(playerController != null)
         {
+            EffectManager.Instance.PlaySFX(9);
             Destroy(gameObject);
             playerController.ChangeCoin(_amount);
         }
-
     }
 }
