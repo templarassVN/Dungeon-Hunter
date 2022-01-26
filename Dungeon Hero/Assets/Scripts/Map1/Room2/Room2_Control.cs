@@ -11,7 +11,7 @@ public class Room2_Control : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _player_armor = PlayerController.instance.maxArmorPoint;
+        _player_armor = PlayerController.instance.MaxArmor;
         _manager = GetComponent<RoomManager>();
     }
 
@@ -34,8 +34,8 @@ public class Room2_Control : MonoBehaviour
 
     void Mission(int max)
     {
-        PlayerController.instance.maxArmorPoint = max;
-        PlayerController.instance.curArmorPoint = max;
+        PlayerController.instance.MaxArmor = max;
+        PlayerController.instance.CurrentArmor = max;
         IngameUIController.instance.ChangeMaxArmor(max);
         IngameUIController.instance.ChangeCurrentArmor(max);
     }

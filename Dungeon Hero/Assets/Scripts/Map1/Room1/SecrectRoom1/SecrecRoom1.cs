@@ -9,7 +9,7 @@ public class SecrecRoom1 : MonoBehaviour
     bool _isFinished = false;
     [SerializeField]
     GameObject Door;
-    [SerializeField] SecrectChest1 _chest;
+    //[SerializeField] SecrectChest1 _chest;
     
     // Start is called before the first frame update
     void Start()
@@ -19,11 +19,11 @@ public class SecrecRoom1 : MonoBehaviour
 
     // Update is called once per frame
     private void Update()
-    {
+    {/*
         if(_chest.IsOpen)
         {
             _isFinished = true;
-        }
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
