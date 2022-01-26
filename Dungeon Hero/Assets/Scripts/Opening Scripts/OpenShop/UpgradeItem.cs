@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class UpgradeItem : MonoBehaviour
 {
+    [SerializeField]
+    GameObject imageGun;
+
     // Start is called before the first frame update
     [SerializeField]
     GameObject _offer;
@@ -14,10 +17,15 @@ public class UpgradeItem : MonoBehaviour
     /// Variabl
     /// </summary>
     bool _inbuyZone = false;
-    
+
     [SerializeField]
     int _cost = 100;
-    
+
+    [SerializeField]
+    Gun itemToBuy;
+
+    bool isBuy = false;
+
     void Start()
     {
         _price.text = _cost.ToString();
@@ -26,15 +34,17 @@ public class UpgradeItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_inbuyZone)
+        if (_inbuyZone && !isBuy)
         {
             if (Input.GetKeyDown("e"))
             {
                 if (PlayerController.instance.Coin >= _cost)
                 {
                     PlayerController.instance.ChangeCoin(-_cost);
-                    PlayerController.instance.MaxHealth += 1;
-                    PlayerController.instance.ChangeHealth(0) ;
+                    PlayerController.instance.availableGun.Add(itemToBuy);
+                    imageGun.SetActive(false);
+                    _offer.SetActive(false);
+                    isBuy = true;
                 }
             }
         }
@@ -44,20 +54,25 @@ public class UpgradeItem : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-        if (collision.collider != null && collision.collider.name == "Player")
+        if (!isBuy)
         {
-            _offer.SetActive(true);
-            _inbuyZone = true;
+            if (collision.collider != null && collision.collider.name == "Player")
+            {
+                _offer.SetActive(true);
+                _inbuyZone = true;
+            }
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.collider != null && collision.collider.name == "Player")
+        if (!isBuy)
         {
-            _offer.SetActive(false);
-            _inbuyZone = false;
+            if (collision.collider != null && collision.collider.name == "Player")
+            {
+                _offer.SetActive(false);
+                _inbuyZone = false;
+            }
         }
     }
 }
