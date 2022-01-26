@@ -230,6 +230,8 @@ public class PlayerController : MonoBehaviour
         {
             if (dashCoolCounter <= 0 && dashCounter <= 0)
             {
+                isInvicible = true;
+                gameObject.layer = 14;
                 activeSpeed = dashingSpeed;
                 dashCounter = dashLength;
                 animator.SetTrigger("dash");
@@ -241,6 +243,8 @@ public class PlayerController : MonoBehaviour
             dashCounter -= Time.deltaTime;
             if (dashCounter <= 0)
             {
+                isInvicible = false;
+                gameObject.layer = 8;
                 activeSpeed = moveSpeed;
                 dashCoolCounter = dashCooldown;
             }

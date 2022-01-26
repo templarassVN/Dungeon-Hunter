@@ -124,7 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5698385432440066009}
   - component: {fileID: 5698385432440066008}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: ShotPoint (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 5698385432510762617}
   - component: {fileID: 5698385432510762619}
   - component: {fileID: 5698385432510762622}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: TheBoss
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -863,7 +863,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5698385432579015210}
   - component: {fileID: 5698385432579015205}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: ShotPoint (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1268,7 +1268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5698385432900098095}
   - component: {fileID: 5698385432900098094}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: ShotPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1350,7 +1350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5698385432980549268}
   - component: {fileID: 5698385432980549271}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: ShotPoint (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1697,7 +1697,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5698385433431771284}
   - component: {fileID: 5698385433431771287}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: ShotPoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1884,7 +1884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5698385433569104295}
   - component: {fileID: 5698385433569104294}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1998,7 +1998,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5698385433855104312}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: ShotPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2037,7 +2037,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5698385433855386222}
   - component: {fileID: 5698385433855386217}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: BossEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2119,7 +2119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5698385433983769997}
   - component: {fileID: 5698385433983769996}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: ShotPoint (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2231,7 +2231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5698385434178623265}
   - component: {fileID: 5698385434178623270}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: ShotPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2313,7 +2313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5698385434290810281}
   - component: {fileID: 5698385434290810280}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: ShotPoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
