@@ -212,6 +212,7 @@ MonoBehaviour:
   body: {fileID: 5662073479806770244}
   itemsToDrop:
   - {fileID: 1067753088977287083, guid: 9fccb6ea92484944dbc217bd8d6d49de, type: 3}
+  - {fileID: 4291117558214118836, guid: 89d09ab94373c3e49af5cdc29c1f79f1, type: 3}
   itemDropPercent: 100
   timeSummon: 10
   creeps:

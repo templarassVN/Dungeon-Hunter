@@ -182,6 +182,7 @@ MonoBehaviour:
   body: {fileID: 8507820207650633918}
   itemsToDrop:
   - {fileID: 328706483151443099, guid: b3e3802730848ed4ba0363913278759f, type: 3}
+  - {fileID: 4291117558214118836, guid: 89d09ab94373c3e49af5cdc29c1f79f1, type: 3}
   itemDropPercent: 50
   rangeToRun: 5
 --- !u!1 &8507820209331848829
