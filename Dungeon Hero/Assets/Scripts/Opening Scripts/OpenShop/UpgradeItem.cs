@@ -42,6 +42,8 @@ public class UpgradeItem : MonoBehaviour
                 {
                     PlayerController.instance.ChangeCoin(-_cost);
                     PlayerController.instance.availableGun.Add(itemToBuy);
+                    PlayerController.instance.CurrentGun++;
+                    PlayerController.instance.SwitchGun();
                     imageGun.SetActive(false);
                     _offer.SetActive(false);
                     isBuy = true;

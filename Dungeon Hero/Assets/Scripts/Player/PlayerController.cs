@@ -418,7 +418,7 @@ public class PlayerController : MonoBehaviour
         UIGunController.instance.gunUI.sprite = availableGun[currentGun].gunUI;
         UIGunController.instance.gunName.text = availableGun[currentGun].weaponName;
         UIGunController.instance.gunSpeed.text = "Speed: " + availableGun[currentGun].attackSpeed;
-        UIGunController.instance.gunDamage.text = "Damage: " + availableGun[currentGun].bullet.GetComponent<BulletController>().speed;
+        UIGunController.instance.gunDamage.text = "Damage: " + availableGun[currentGun].bullet.GetComponent<BulletController>().damage;
         foreach (Gun thegun in availableGun)
         {
             thegun.gameObject.SetActive(false);

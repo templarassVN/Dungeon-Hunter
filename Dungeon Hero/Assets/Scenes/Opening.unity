@@ -15819,7 +15819,7 @@ Transform:
   - {fileID: 1035782175}
   - {fileID: 1848417505}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &456943119
 CircleCollider2D:
@@ -31055,7 +31055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8960068251254549518, guid: a0765714e683bbf4c8829d46fdb30c7c, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8960068251254549518, guid: a0765714e683bbf4c8829d46fdb30c7c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -36495,7 +36495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1115288262}
   - component: {fileID: 1115288263}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36578,7 +36578,7 @@ GameObject:
   - component: {fileID: 1138796605}
   - component: {fileID: 1138796604}
   - component: {fileID: 1138796603}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
