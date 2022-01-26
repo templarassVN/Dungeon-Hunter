@@ -21,17 +21,19 @@ public class PlayerController : MonoBehaviour
 
     //Camera
     private Camera cam;
+    //Pause Game
+    public GameObject pauseGame;
 
     public Transform gunArm;
     public List<Gun> availableGun = new List<Gun>();
     private int currentGun = 0;
 
-/*
-    //Shooting 
-    public GameObject bullet;
-    public Transform firePos;
-    public float attackSpeed;
-    private float timeCount = 0;*/
+    /*
+        //Shooting 
+        public GameObject bullet;
+        public Transform firePos;
+        public float attackSpeed;
+        private float timeCount = 0;*/
 
     //Animator
     private Animator animator;
@@ -47,7 +49,7 @@ public class PlayerController : MonoBehaviour
     // Health & Armor
     private int maxHealth = 5;
     private int currentHealth;
-    
+
     [SerializeField]
     private int maxArmor = 7;
     private int currentArmor = 0;
@@ -81,6 +83,10 @@ public class PlayerController : MonoBehaviour
     private int coin = 0;
 
     public int CurrentHealth { get => currentHealth; set => currentHealth = value; }
+    public int MaxArmor { get => maxArmor; set => maxArmor = value; }
+    public int Coin { get => coin; set => coin = value; }
+    public int MaxHealth { get => maxHealth; set => maxHealth = value; }
+    public int CurrentGun { get => currentGun; set => currentGun = value; }
 
     void Awake()
     {
@@ -93,7 +99,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxArmor= _mBody.GetComponent<SkinStat>().AmorPoint;
+        // Init Player
+        maxArmor = _mBody.GetComponent<SkinStat>().AmorPoint;
         currentArmor = maxArmor;
         rigidBody = GetComponent<Rigidbody2D>();
         cam = Camera.main;
@@ -103,6 +110,18 @@ public class PlayerController : MonoBehaviour
         currentHealth = maxHealth;
         currentArmor = maxArmor;
 
+        // If Load Game
+        if(GameStateManager.Instance._loadGame){
+            coin = GameStateManager.Instance.Data.coin;
+            currentHealth = GameStateManager.Instance.Data.health;
+            maxHealth = GameStateManager.Instance.Data.maxHealth;
+            maxArmor = GameStateManager.Instance.Data.maxArmor;
+            currentGun = GameStateManager.Instance.Data.currentGun;
+            availableGun = GameStateManager.Instance.Data.availableGun;
+            transform.position = GameStateManager.Instance.Data.position;
+        }
+
+        // Set up UI
         IngameUIController.instance.healthSlider.maxValue = maxHealth;
         IngameUIController.instance.healthSlider.value = currentHealth;
         IngameUIController.instance.healthText.text = currentHealth.ToString() + '/' + maxHealth.ToString();
@@ -117,7 +136,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentHealth <= 0) {
+        if (currentHealth <= 0)
+        {
             return;
         }
         //Moving & Rotate Character
@@ -148,16 +168,16 @@ public class PlayerController : MonoBehaviour
         Vector2 offset = new Vector2(mousePosition.x - screenPoint.x, mousePosition.y - screenPoint.y);
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
         gunArm.rotation = Quaternion.Euler(0, 0, angle);
-/*
-        if (Input.GetMouseButton(0))
-        {
-            timeCount -= Time.deltaTime;
-            if (timeCount <= 0)
-            {
-                Instantiate(bullet, firePos.position, firePos.rotation);
-                timeCount = attackSpeed;
-            }
-        }*/
+        /*
+                if (Input.GetMouseButton(0))
+                {
+                    timeCount -= Time.deltaTime;
+                    if (timeCount <= 0)
+                    {
+                        Instantiate(bullet, firePos.position, firePos.rotation);
+                        timeCount = attackSpeed;
+                    }
+                }*/
 
         // isMoving
         if (moveDirection != Vector2.zero)
@@ -196,7 +216,7 @@ public class PlayerController : MonoBehaviour
         //Dashing
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (dashCoolCounter <= 0 && dashCounter <=0)
+            if (dashCoolCounter <= 0 && dashCounter <= 0)
             {
                 activeSpeed = dashingSpeed;
                 dashCounter = dashLength;
@@ -222,7 +242,7 @@ public class PlayerController : MonoBehaviour
         //MoveBack
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (moveBackCounter <= 0 && moveBackCounter <=0)
+            if (moveBackCounter <= 0 && moveBackCounter <= 0)
             {
                 activeSpeed = moveBackSpeed;
                 moveBackCounter = moveBackLength;
@@ -261,7 +281,7 @@ public class PlayerController : MonoBehaviour
         // Speed up
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            if (speedUpCounter <= 0 && speedUpCounter <=0)
+            if (speedUpCounter <= 0 && speedUpCounter <= 0)
             {
                 activeSpeed = speedUpSpeed;
                 speedUpCounter = speedUpLength;
@@ -284,16 +304,29 @@ public class PlayerController : MonoBehaviour
             speedUpCoolCounter -= Time.deltaTime;
         }
 
+        // Pause Game
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("Pause Game");
+            GameStateManager.Instance.PauseGame();
+            pauseGame.SetActive(true);
+        }
+
         // SwitchGun
-        if (Input.GetKeyDown(KeyCode.Tab)){
-            if (availableGun.Count > 0){
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (availableGun.Count > 0)
+            {
                 currentGun++;
-                if (currentGun >= availableGun.Count){
+                if (currentGun >= availableGun.Count)
+                {
                     currentGun = 0;
                 }
 
                 SwitchGun();
-            }else{
+            }
+            else
+            {
                 Debug.LogError("No gun available");
             }
         }
@@ -375,8 +408,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void SwitchGun(){
-        foreach(Gun thegun in availableGun){
+    public void SwitchGun()
+    {
+        foreach (Gun thegun in availableGun)
+        {
             thegun.gameObject.SetActive(false);
         }
 

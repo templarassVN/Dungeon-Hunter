@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class EffectManager : MonoBehaviour
 {
     [SerializeField]
     AudioClip[] _sound;
+    public AudioClip _selectedAudioClip;
     AudioSource _main;
     public static EffectManager Instance;
     // Start is called before the first frame update
@@ -28,4 +30,10 @@ public class EffectManager : MonoBehaviour
         _main.clip = _sound[0];
         _main.Play();
     }
+
+    public void SelectedButton(){
+        _main.clip = _selectedAudioClip;
+        _main.Play();
+    }
+
 }
