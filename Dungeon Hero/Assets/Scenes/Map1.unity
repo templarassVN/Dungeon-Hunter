@@ -2047,6 +2047,7 @@ MonoBehaviour:
   spawnEnemyWave2: {fileID: 2101470423}
   spawnEnemyWave3: {fileID: 1328931310}
   clear: {fileID: 1370407296}
+  currentRoom: 3
 --- !u!4 &581479620
 Transform:
   m_ObjectHideFlags: 0
@@ -2252,6 +2253,7 @@ MonoBehaviour:
   spawnEnemyWave2: {fileID: 1059125891}
   spawnEnemyWave3: {fileID: 1837028098}
   clear: {fileID: 1370407296}
+  currentRoom: 2
 --- !u!61 &626108396
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2526,6 +2528,11 @@ Transform:
   m_Father: {fileID: 581479620}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &690688552 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3838049233459066894, guid: a0765714e683bbf4c8829d46fdb30c7c, type: 3}
+  m_PrefabInstance: {fileID: 1670427286}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &702460486
 GameObject:
   m_ObjectHideFlags: 0
@@ -2695,6 +2702,7 @@ MonoBehaviour:
   sprite: {fileID: 2800000, guid: 07ab3a55228a84544a41ed193be7a1fe, type: 3}
   _NewGame: 1
   _finishMap1: 0
+  currentSavePoint: 1
 --- !u!4 &730300533
 Transform:
   m_ObjectHideFlags: 0
@@ -8194,6 +8202,7 @@ MonoBehaviour:
   spawnEnemyWave2: {fileID: 1236510069}
   spawnEnemyWave3: {fileID: 562592463}
   clear: {fileID: 1370407296}
+  currentRoom: 1
 --- !u!1 &870626406
 GameObject:
   m_ObjectHideFlags: 0
@@ -8363,6 +8372,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1913770393849200502, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
+      propertyPath: pauseGame
+      value: 
+      objectReference: {fileID: 690688552}
     - target: {fileID: 1913770393849200502, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
       propertyPath: availableGun.Array.size
       value: 4
@@ -21776,6 +21789,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 852805847330430840, guid: a0765714e683bbf4c8829d46fdb30c7c, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594673979807130276, guid: a0765714e683bbf4c8829d46fdb30c7c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1730644644}
     - target: {fileID: 8960068250807991057, guid: a0765714e683bbf4c8829d46fdb30c7c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -32916,6 +32937,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dcf2dbd8aec4ed4c9648d20c89668b1, type: 3}
+--- !u!1 &1730644644 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4507325858006600351, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
+  m_PrefabInstance: {fileID: 905667800}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1744477272
 PrefabInstance:
   m_ObjectHideFlags: 0

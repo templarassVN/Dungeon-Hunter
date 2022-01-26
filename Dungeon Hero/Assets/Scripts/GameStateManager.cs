@@ -42,15 +42,22 @@ public class GameStateManager : MonoBehaviour
     static readonly string SAVE_FOLDER = "save";
 
     static Vector2 a = new Vector2(5f, -2f);
-    private List<Vector2> position = new List<Vector2>(){a, new Vector2(-24.45f, 3.07f), new Vector2(6.26f, -2.55f), new Vector2(32.94f, -2.51f), new Vector2(0f,0f), new Vector2(0f,0f)};
+    private List<Vector2> position = new List<Vector2>() { a, 
+    new Vector2(-24f, 3f), 
+    new Vector2(10.26f, -2.55f), 
+    new Vector2(36.94f, -2.51f), 
+    new Vector2(5f, -2f), 
+    new Vector2(5f, -2f), 
+    new Vector2(-24, -16f) };
     public int currentSavePoint = 0;
-   
+
     public void PauseGame()
     {
         Time.timeScale = 0;
     }
 
-    public void ResumeGame()    {
+    public void ResumeGame()
+    {
         Time.timeScale = 1;
     }
 

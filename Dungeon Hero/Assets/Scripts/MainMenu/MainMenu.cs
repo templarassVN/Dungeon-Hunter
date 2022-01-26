@@ -68,6 +68,11 @@ public class MainMenu : MonoBehaviour
                 string json = File.ReadAllText(fullPath + SAVE_FILE);
                 Debug.Log(json);
                 GameStateManager.Instance.Data =  JsonUtility.FromJson<PlayerData>(json);
+                GameStateManager.Instance.currentSavePoint = GameStateManager.Instance.Data.savePoint;
+                if (GameStateManager.Instance.currentSavePoint >=4){
+                    GameStateManager.Instance.isFinishMap1 = true;
+                    GameStateManager.Instance.IsNewGame = false;
+                }
             }
             yield return null;
         }

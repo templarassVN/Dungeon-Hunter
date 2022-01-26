@@ -19,6 +19,10 @@ public class Door_A_B : MonoBehaviour
     {
         _UI_PressE.SetActive(false);
         _room_to_open.SetActive(false);
+        if (_room_to_open.GetComponent<RoomManager>().currentRoom == GameStateManager.Instance.currentSavePoint)
+        {
+            _room_to_open.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -40,16 +44,16 @@ public class Door_A_B : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       
-            if (collision.collider != null && collision.collider.name == "Player")
+
+        if (collision.collider != null && collision.collider.name == "Player")
+        {
+            if ((_room_to_close == null) ||
+                (_room_to_close.GetComponent<RoomManager>() != null && _room_to_close.GetComponent<RoomManager>().isFinished))
             {
-                if ((_room_to_close == null) ||
-                    (_room_to_close.GetComponent<RoomManager>() != null && _room_to_close.GetComponent<RoomManager>().isFinished))
-                    {
-                        _UI_PressE.SetActive(true);
-                        _isOpen = true;
-                    }  
-            }   
+                _UI_PressE.SetActive(true);
+                _isOpen = true;
+            }
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)

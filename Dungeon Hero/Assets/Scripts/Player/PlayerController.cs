@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
             maxArmor = GameStateManager.Instance.Data.maxArmor;
             currentGun = GameStateManager.Instance.Data.currentGun;
             availableGun = GameStateManager.Instance.Data.availableGun;
-            transform.position = GameStateManager.Instance.Data.position;
+            transform.position = new Vector3 (GameStateManager.Instance.Data.position.x, GameStateManager.Instance.Data.position.y, 0);
         }
 
         // Set up UI
@@ -310,7 +310,6 @@ public class PlayerController : MonoBehaviour
                 {
                     currentGun = 0;
                 }
-
                 SwitchGun();
             }
             else
