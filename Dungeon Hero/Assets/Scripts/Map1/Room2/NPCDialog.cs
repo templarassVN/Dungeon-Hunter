@@ -92,7 +92,10 @@ public class NPCDialog : MonoBehaviour
     {
         index += 1;
         if (index == 2)
+        {
+            MusicManager.Instance.PlaySheet(3);
             rain.SetActive(true);
+        }
         if (index >= _Sentences.Length)
         {
             _talker.isAccepted = true;

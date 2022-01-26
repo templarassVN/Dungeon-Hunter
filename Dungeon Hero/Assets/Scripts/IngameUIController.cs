@@ -13,6 +13,9 @@ public class IngameUIController : MonoBehaviour
     public Text armorText;
 
     public Text coinText;
+
+    [SerializeField]
+    GameObject deathScreen;
     void Awake(){
         DontDestroyOnLoad(gameObject);
         if (instance == null)
@@ -23,7 +26,7 @@ public class IngameUIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        deathScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -64,5 +67,9 @@ public class IngameUIController : MonoBehaviour
     public void ChangeCoinText(int amount)
     {
         coinText.text = amount.ToString();
+    }
+
+    public void DeathDisplay() {
+        deathScreen.SetActive(true);
     }
 }

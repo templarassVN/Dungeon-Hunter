@@ -10,12 +10,12 @@ public class Room0Manager : MonoBehaviour
     void Start()
     {
         MusicManager.Instance.PlaySheet(2);
-
+        GameStateManager.Instance.SetGameState(GameState.PLAY);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

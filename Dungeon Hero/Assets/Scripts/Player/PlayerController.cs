@@ -82,6 +82,8 @@ public class PlayerController : MonoBehaviour
 
     private int coin = 0;
 
+    private int live = 1;
+
     public int CurrentHealth { get => currentHealth; set => currentHealth = value; }
     public int MaxArmor { get => maxArmor; set => maxArmor = value; }
     public int Coin { get => coin; set => coin = value; }
@@ -139,8 +141,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && live == 1)
         {
+            IngameUIController.instance.DeathDisplay();
             return;
         }
         //Moving & Rotate Character

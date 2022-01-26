@@ -14,7 +14,8 @@ public class Map2_LevelManager : MonoBehaviour
     private void Awake()
     {
         _maincam = Camera.main;
-        
+        MusicManager.Instance.PlaySheet(4);
+        _Map2_Stage.SetActive(true);
     }
     void Start()
     {
@@ -26,19 +27,16 @@ public class Map2_LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(BossController.instance.health <= 0)
+            MusicManager.Instance.PlaySheet(5);
     }
     private IEnumerator PlayOpenMap2(PlayableDirector playableDirector)
     {
         playableDirector.Play();
         yield return new WaitForSeconds((float)playableDirector.duration);
         GameStateManager.Instance.SetGameState(GameState.PLAY);
-        Map2_StageChange();
+        _Map2_Stage.SetActive(false) ;
     }
 
-    public void Map2_StageChange()
-    {
-        _Map2_Stage.SetActive(false);
-        _Map2_Stage.SetActive(true);
-    }
+    
 }

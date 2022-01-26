@@ -12,10 +12,12 @@ public class PauseController : MonoBehaviour
 
     private void Start() {
         option.SetActive(false);
+        gameObject.SetActive(false);
     }
     public void PauseGame()
     {
         GameStateManager.Instance.PauseGame();
+        
     }
 
     public void ResumeGame()
@@ -36,6 +38,7 @@ public class PauseController : MonoBehaviour
     public void Quit()
     {
         //GameStateManager.Instance.SaveGame(player.GetComponent<PlayerController>());
+        Destroy(player);
         SceneManager.LoadScene(0);
     }
 
