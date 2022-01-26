@@ -43530,8 +43530,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Sentences:
-  - To Unlock this door, You must face my challenge
-  - Good Luck!
+  - Hello Hero
+  - You can upgrade your weapon in above room
   _text_speed: 0.1
   _textDisplay: {fileID: 799736407}
   _talker: {fileID: 99370317}
