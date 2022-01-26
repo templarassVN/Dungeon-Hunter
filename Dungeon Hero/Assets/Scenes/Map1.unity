@@ -8388,11 +8388,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4507325858006600349, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 74.7
+      value: -23.5
       objectReference: {fileID: 0}
     - target: {fileID: 4507325858006600349, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4507325858006600349, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8638,6 +8638,7 @@ MonoBehaviour:
   activable: 1
   _time_gap: 2
   _isActive: 0
+  _curr_t: 0
 --- !u!61 &927643027
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15909,8 +15910,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 288374a7810e47f4eadd6db2bb85ae69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
-  active: 0
   _Player: {fileID: 0}
 --- !u!95 &988791850
 Animator:
@@ -39676,6 +39675,7 @@ MonoBehaviour:
   _text_speed: 0.1
   _textDisplay: {fileID: 799736407}
   _talker: {fileID: 99370317}
+  rain: {fileID: 0}
   index: 0
   _isTyping: 0
 --- !u!114 &1972936791
