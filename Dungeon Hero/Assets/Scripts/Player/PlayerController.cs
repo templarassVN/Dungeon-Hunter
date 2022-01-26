@@ -136,6 +136,12 @@ public class PlayerController : MonoBehaviour
         IngameUIController.instance.armorText.text = currentArmor.ToString() + '/' + maxArmor.ToString();
 
         IngameUIController.instance.coinText.text = coin.ToString();
+
+        // Gun UI
+        UIGunController.instance.gunUI.sprite = availableGun[currentGun].gunUI;
+        UIGunController.instance.gunName.text = availableGun[currentGun].weaponName;
+        UIGunController.instance.gunSpeed.text = "Speed: " + availableGun[currentGun].attackSpeed;
+        UIGunController.instance.gunDamage.text = "Damage: " + availableGun[currentGun].bullet.GetComponent<BulletController>().speed;
     }
 
     // Update is called once per frame
@@ -405,6 +411,10 @@ public class PlayerController : MonoBehaviour
 
     public void SwitchGun()
     {
+        UIGunController.instance.gunUI.sprite = availableGun[currentGun].gunUI;
+        UIGunController.instance.gunName.text = availableGun[currentGun].weaponName;
+        UIGunController.instance.gunSpeed.text = "Speed: " + availableGun[currentGun].attackSpeed;
+        UIGunController.instance.gunDamage.text = "Damage: " + availableGun[currentGun].bullet.GetComponent<BulletController>().speed;
         foreach (Gun thegun in availableGun)
         {
             thegun.gameObject.SetActive(false);

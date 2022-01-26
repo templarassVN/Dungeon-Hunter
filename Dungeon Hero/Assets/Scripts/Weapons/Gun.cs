@@ -10,6 +10,9 @@ public class Gun : MonoBehaviour
     private float timeCount = 0;
     Camera _main_cam;
 
+    public string weaponName;
+    public Sprite gunUI;
+
     // Start is called before the first frame update
     void Start()
     {
