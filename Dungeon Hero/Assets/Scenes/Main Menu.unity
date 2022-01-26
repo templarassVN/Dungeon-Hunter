@@ -566,6 +566,7 @@ MonoBehaviour:
   sprite: {fileID: 2800000, guid: 07ab3a55228a84544a41ed193be7a1fe, type: 3}
   _NewGame: 1
   _finishMap1: 0
+  currentSavePoint: 0
 --- !u!4 &69901204
 Transform:
   m_ObjectHideFlags: 0

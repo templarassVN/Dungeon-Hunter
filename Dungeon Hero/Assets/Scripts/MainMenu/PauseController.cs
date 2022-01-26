@@ -6,6 +6,13 @@ using UnityEngine.SceneManagement;
 public class PauseController : MonoBehaviour
 {
     public GameObject player;
+
+    [SerializeField]
+    GameObject option;
+
+    private void Start() {
+        option.SetActive(false);
+    }
     public void PauseGame()
     {
         GameStateManager.Instance.PauseGame();
@@ -19,6 +26,11 @@ public class PauseController : MonoBehaviour
     
     public void SaveGame(){
         GameStateManager.Instance.SaveGame(player.GetComponent<PlayerController>());
+    }
+
+    public void Option() {
+        gameObject.SetActive(false);
+        option.SetActive(true);
     }
 
     public void Quit()
