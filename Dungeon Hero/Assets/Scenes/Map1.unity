@@ -2691,6 +2691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7259d47239655cb4ab177b34abe6adcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _loadGame: 0
   sprite: {fileID: 2800000, guid: 07ab3a55228a84544a41ed193be7a1fe, type: 3}
   _NewGame: 1
   _finishMap1: 0
@@ -8695,7 +8696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1368694440efa646a1a89d68f56bef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _numsSce: 0
+  _numsSce: 1
 --- !u!58 &935969226
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -21721,7 +21722,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isFinished: 0
   Door: {fileID: 1938584415}
-  _chest: {fileID: 1589441497}
 --- !u!61 &1661704427
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38893,6 +38893,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ad703abfb82e4a5478307268a23123c8, type: 3}
   - {fileID: 8300000, guid: 7b851853b621dd049a6934bd1dd3502f, type: 3}
   - {fileID: 8300000, guid: b6e53f41fc74a244f8250aa78d98fc3e, type: 3}
+  _selectedAudioClip: {fileID: 0}
 --- !u!82 &1891140927
 AudioSource:
   m_ObjectHideFlags: 0

@@ -18,13 +18,13 @@ public class PauseController : MonoBehaviour
     }
     
     public void SaveGame(){
-        GameStateManager.Instance.QuitGame(player.GetComponent<PlayerController>());
+        GameStateManager.Instance.SaveGame(player.GetComponent<PlayerController>());
     }
 
     public void Quit()
     {
-        GameStateManager.Instance.QuitGame(player.GetComponent<PlayerController>());
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        //GameStateManager.Instance.SaveGame(player.GetComponent<PlayerController>());
+        SceneManager.LoadScene(0);
     }
 
 }

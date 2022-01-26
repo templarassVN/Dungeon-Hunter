@@ -34,6 +34,7 @@ public class GameStateManager : MonoBehaviour
     }
     public void SetGameState(GameState state)
     {
+        this.State = state;
         Debug.Log(State);
     }
 
@@ -54,12 +55,6 @@ public class GameStateManager : MonoBehaviour
     }
 
     public void SaveGame(PlayerController player)
-    {
-        //PlayerPrefs.SetFloat("PlayerX", player.transform.position.x);
-        //PlayerPrefs.SetFloat("PlayerY", player.transform.position.x);
-    }
-
-    public void QuitGame(PlayerController player)
     {
         PlayerData data = new PlayerData(position[currentSavePoint], player, currentSavePoint, SceneManager.GetActiveScene().buildIndex);
 

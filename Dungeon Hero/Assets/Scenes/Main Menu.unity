@@ -562,8 +562,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7259d47239655cb4ab177b34abe6adcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _NewGame: 1
   _loadGame: 0
+  sprite: {fileID: 2800000, guid: 07ab3a55228a84544a41ed193be7a1fe, type: 3}
+  _NewGame: 1
+  _finishMap1: 0
 --- !u!4 &69901204
 Transform:
   m_ObjectHideFlags: 0
@@ -3974,6 +3976,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sound:
   - {fileID: 8300000, guid: a52a762a81a169e489911c3d25ef32d8, type: 3}
+  - {fileID: 8300000, guid: 8801842e652589f43b2c75dcd7430235, type: 3}
+  - {fileID: 8300000, guid: 9d2456fff877bbc43a8b0f0de1528b91, type: 3}
+  - {fileID: 8300000, guid: 717f629557c500e4b9ba2fce9e34f283, type: 3}
+  - {fileID: 8300000, guid: 3d2732bb9fb026340a6d7deb90b18af2, type: 3}
+  - {fileID: 8300000, guid: 0e0b9f7f4b22bc5489de2525a44d6c3c, type: 3}
+  - {fileID: 8300000, guid: f7c555902caa38a45ae0792e61223b06, type: 3}
+  - {fileID: 8300000, guid: 297eaa725d4cb44449b0a8d9cdc95591, type: 3}
+  - {fileID: 8300000, guid: b8c9e112004f6974e8bad65b9a2bc4c2, type: 3}
+  - {fileID: 8300000, guid: ad703abfb82e4a5478307268a23123c8, type: 3}
+  - {fileID: 8300000, guid: 7b851853b621dd049a6934bd1dd3502f, type: 3}
+  - {fileID: 8300000, guid: b6e53f41fc74a244f8250aa78d98fc3e, type: 3}
   _selectedAudioClip: {fileID: 8300000, guid: 7cad6d480563e20448bb73be5aa70ea9, type: 3}
 --- !u!82 &1105727774
 AudioSource:

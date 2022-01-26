@@ -266,19 +266,6 @@ public class PlayerController : MonoBehaviour
             moveBackCoolCounter -= Time.deltaTime;
         }
 
-        // Update is called once per frame
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            getHit(-2);
-        }
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            getHit(2);
-        }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            ChangeCoin(2);
-        }
         // Speed up
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
