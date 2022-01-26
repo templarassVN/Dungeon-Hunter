@@ -53,6 +53,7 @@ public class RoomManager : MonoBehaviour
             _isFinished = true;
             if (countTimeClear > 0) {
                 clear.SetActive(true);
+                GameStateManager.Instance.currentSavePoint++;
             }
         }
 

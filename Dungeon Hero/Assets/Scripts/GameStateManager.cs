@@ -41,9 +41,9 @@ public class GameStateManager : MonoBehaviour
     static readonly string SAVE_FILE = "/userSaveGame.json";
     static readonly string SAVE_FOLDER = "save";
 
-    static Vector2 a = new Vector2(-3.06f, 2.6f);
+    static Vector2 a = new Vector2(5f, -2f);
     private List<Vector2> position = new List<Vector2>(){a, new Vector2(-24.45f, 3.07f), new Vector2(6.26f, -2.55f), new Vector2(32.94f, -2.51f), new Vector2(0f,0f), new Vector2(0f,0f)};
-    private int currentSavePoint = 0;
+    public int currentSavePoint = 0;
    
     public void PauseGame()
     {
