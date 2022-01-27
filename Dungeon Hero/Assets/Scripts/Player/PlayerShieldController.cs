@@ -22,7 +22,7 @@ public class PlayerShieldController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("f"))
+        if (Input.GetKeyDown("q"))
         {
             if (_cur_cd == 0f)
             {

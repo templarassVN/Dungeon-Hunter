@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3217359587832634168, guid: a0765714e683bbf4c8829d46fdb30c7c, type: 3}
+      propertyPath: _shield_effect
+      value: 
+      objectReference: {fileID: 1614268813}
     - target: {fileID: 3838049233459066894, guid: a0765714e683bbf4c8829d46fdb30c7c, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -38226,7 +38230,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 220316051
   m_SortingLayer: 1
-  m_SortingOrder: 4
+  m_SortingOrder: 8
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -45675,6 +45679,11 @@ Transform:
 --- !u!4 &1614268812 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4507325858006600349, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
+  m_PrefabInstance: {fileID: 1614268810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1614268813 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 25562496217365710, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
   m_PrefabInstance: {fileID: 1614268810}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1630483514
