@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     public Transform gunArm;
     public List<Gun> availableGun = new List<Gun>();
-    private int currentGun = 0;
+    public int currentGun = 0;
 
     /*
         //Shooting 

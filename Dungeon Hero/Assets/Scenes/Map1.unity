@@ -25000,6 +25000,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8944049564854237477, guid: a0765714e683bbf4c8829d46fdb30c7c, type: 3}
+      propertyPath: m_ItemText
+      value: 
+      objectReference: {fileID: 1670427288}
     - target: {fileID: 8960068250807991057, guid: a0765714e683bbf4c8829d46fdb30c7c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -25171,6 +25175,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3838049233459066894, guid: a0765714e683bbf4c8829d46fdb30c7c, type: 3}
   m_PrefabInstance: {fileID: 1670427286}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1670427288 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1631744920884197944, guid: a0765714e683bbf4c8829d46fdb30c7c, type: 3}
+  m_PrefabInstance: {fileID: 1670427286}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1672490013
 GameObject:
   m_ObjectHideFlags: 0

@@ -63,8 +63,6 @@ public class RoomManager : MonoBehaviour
             spawnEnemyWave3.Spawn();
             spawnEnemyWave2.currentEnemy = -2;
         }
-            Debug.Log("counter clear");
-        
         if (spawnEnemyWave3.currentEnemy == 0)
         {
             if (_isFinished == false)

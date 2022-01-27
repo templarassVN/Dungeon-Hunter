@@ -39,6 +39,9 @@ public class PauseController : MonoBehaviour
     {
         //GameStateManager.Instance.SaveGame(player.GetComponent<PlayerController>());
         Destroy(player);
+        Destroy(IngameUIController.instance.gameObject);
+        Destroy(GameStateManager.Instance.gameObject);
+        ResumeGame();
         SceneManager.LoadScene(0);
     }
 
