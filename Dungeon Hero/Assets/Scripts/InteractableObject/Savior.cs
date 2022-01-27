@@ -23,7 +23,6 @@ public class Savior : MonoBehaviour
         {
             EffectManager.Instance.PlaySFX(9);
             Destroy(gameObject);
-            playerController.Reviable = true ;
         }
     }
 }

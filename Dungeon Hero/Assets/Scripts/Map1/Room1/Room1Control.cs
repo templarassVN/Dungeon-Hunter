@@ -29,8 +29,7 @@ public class Room1Control : MonoBehaviour
                 
             }
         }
-        if(_challengeFinished)
-            EffectManager.Instance.FinishChallenge();
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

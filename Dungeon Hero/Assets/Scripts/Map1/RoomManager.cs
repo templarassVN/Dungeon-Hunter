@@ -20,6 +20,8 @@ public class RoomManager : MonoBehaviour
     float countTimeClear = 3f;
     public int currentRoom;
 
+    bool _winsong = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,8 +75,12 @@ public class RoomManager : MonoBehaviour
             }
         }
 
-        if (_isFinished)
-            EffectManager.Instance.FinishRoom();
+        if (_isFinished && _winsong )
+        {
+            _winsong = false;
+            EffectManager.Instance.PlaySFX(10);
+        }
+
     }
 
     public bool isFinished
