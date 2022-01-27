@@ -25618,6 +25618,7 @@ MonoBehaviour:
   _price: {fileID: 432592091}
   _cost: 100
   itemToBuy: {fileID: 0}
+  isHealth: 1
 --- !u!1 &872153601
 GameObject:
   m_ObjectHideFlags: 0
@@ -64053,6 +64054,7 @@ MonoBehaviour:
   _price: {fileID: 872153603}
   _cost: 100
   itemToBuy: {fileID: 360730972}
+  isHealth: 0
 --- !u!1 &2038466760 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2695675147591687757, guid: e845ada891406cd4fb27d084ad93e87c, type: 3}

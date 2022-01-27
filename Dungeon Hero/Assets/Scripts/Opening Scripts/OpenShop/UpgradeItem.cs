@@ -26,6 +26,9 @@ public class UpgradeItem : MonoBehaviour
 
     bool isBuy = false;
 
+    [SerializeField]
+    bool isHealth = true;
+
     void Start()
     {
         _price.text = _cost.ToString();
@@ -41,12 +44,21 @@ public class UpgradeItem : MonoBehaviour
                 if (PlayerController.instance.Coin >= _cost)
                 {
                     PlayerController.instance.ChangeCoin(-_cost);
-                    PlayerController.instance.availableGun.Add(itemToBuy);
-                    PlayerController.instance.CurrentGun++;
-                    PlayerController.instance.SwitchGun();
-                    imageGun.SetActive(false);
-                    _offer.SetActive(false);
-                    isBuy = true;
+                    if (isHealth)
+                    {
+                        PlayerController.instance.MaxHealth++;
+                        PlayerController.instance.CurrentHealth++;
+                        PlayerController.instance.ChangeHealth(0);
+                    }
+                    else
+                    {
+                        PlayerController.instance.availableGun.Add(itemToBuy);
+                        PlayerController.instance.CurrentGun++;
+                        PlayerController.instance.SwitchGun();
+                        imageGun.SetActive(false);
+                        _offer.SetActive(false);
+                        isBuy = true;
+                    }
                 }
             }
         }

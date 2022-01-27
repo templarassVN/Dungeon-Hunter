@@ -66,6 +66,10 @@ public class SkinItem : MonoBehaviour
         _player_skin_stat.SpeedPoint = _curr_skin_stat.SpeedPoint;
         _curr_skin_stat.SpeedPoint = temp1;
 
+        PlayerController.instance.MaxArmor = _player_skin_stat.AmorPoint;
+        PlayerController.instance.moveSpeed = _player_skin_stat.SpeedPoint;
+        PlayerController.instance.ChangeArmor(0);
+
         Debug.Log(_curr_skin.sprite);
         Debug.Log(_player_skin.sprite);
         Sprite _player_old = _player_skin_stat.ChangeSprite(_curr_skin.sprite);
