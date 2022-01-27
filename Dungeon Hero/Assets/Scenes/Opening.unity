@@ -25383,9 +25383,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 958246348}
     - target: {fileID: 1913770393849200502, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
+      propertyPath: scriptGun.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913770393849200502, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
       propertyPath: availableGun.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1913770393849200502, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
+      propertyPath: scriptGun.Array.data[0]
+      value: 
+      objectReference: {fileID: 30244269}
+    - target: {fileID: 1913770393849200502, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
+      propertyPath: scriptGun.Array.data[1]
+      value: 
+      objectReference: {fileID: 360730972}
+    - target: {fileID: 1913770393849200502, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
+      propertyPath: scriptGun.Array.data[2]
+      value: 
+      objectReference: {fileID: 896431099}
     - target: {fileID: 1913770393849200502, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
       propertyPath: availableGun.Array.data[0]
       value: 

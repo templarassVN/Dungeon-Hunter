@@ -614,6 +614,7 @@ MonoBehaviour:
   Dialog: {fileID: 1972936788}
   _accepted: 0
   _isfinish: 0
+  room2Manager: {fileID: 626108395}
 --- !u!212 &99370318
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9912,9 +9913,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1670427287}
     - target: {fileID: 1913770393849200502, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
+      propertyPath: scriptGun.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913770393849200502, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
       propertyPath: availableGun.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1913770393849200502, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
+      propertyPath: scriptGun.Array.data[0]
+      value: 
+      objectReference: {fileID: 1341180142}
+    - target: {fileID: 1913770393849200502, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
+      propertyPath: scriptGun.Array.data[1]
+      value: 
+      objectReference: {fileID: 383027821}
+    - target: {fileID: 1913770393849200502, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
+      propertyPath: scriptGun.Array.data[2]
+      value: 
+      objectReference: {fileID: 1154039936}
+    - target: {fileID: 1913770393849200502, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
+      propertyPath: scriptGun.Array.data[3]
+      value: 
+      objectReference: {fileID: 1632072699}
     - target: {fileID: 1913770393849200502, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
       propertyPath: availableGun.Array.data[0]
       value: 

@@ -16,6 +16,9 @@ public class NPC : MonoBehaviour
     [SerializeField]
     bool _isfinish = false;
 
+    [SerializeField]
+    RoomManager room2Manager;
+
     void Start()
     {
         _UI_PressF.SetActive(false);
@@ -37,7 +40,7 @@ public class NPC : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider != null && collision.collider.name == "Player")
+        if (collision.collider != null && collision.collider.name == "Player" && !room2Manager.isFinished)
         {
             _UI_PressF.SetActive(true);
             _isOpen = true;

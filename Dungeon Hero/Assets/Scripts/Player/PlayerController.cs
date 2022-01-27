@@ -84,6 +84,9 @@ public class PlayerController : MonoBehaviour
 
     private int live = 1;
 
+    [SerializeField]
+    Gun[] scriptGun;
+
     public int CurrentHealth { get => currentHealth; set => currentHealth = value; }
     public int MaxArmor { get => maxArmor; set => maxArmor = value; }
     public int Coin { get => coin; set => coin = value; }
@@ -122,7 +125,24 @@ public class PlayerController : MonoBehaviour
             maxHealth = GameStateManager.Instance.Data.maxHealth;
             maxArmor = GameStateManager.Instance.Data.maxArmor;
             currentGun = GameStateManager.Instance.Data.currentGun;
-            availableGun = GameStateManager.Instance.Data.availableGun;
+            availableGun.Clear();
+            foreach(string gunName in GameStateManager.Instance.Data.availableGun) {
+                switch (gunName) {
+                    case "Pistol": {
+                        availableGun.Add(scriptGun[0]);
+                        break;
+                    }
+                    case "Uzi": {
+                        availableGun.Add(scriptGun[1]);
+                        break;
+                    }
+                    case "Machine": {
+                        availableGun.Add(scriptGun[2]);
+                        break;
+                    }
+                }
+            }
+            SwitchGun();
             transform.position = new Vector3(GameStateManager.Instance.Data.position.x, GameStateManager.Instance.Data.position.y, 0);
         }
 

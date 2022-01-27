@@ -8,7 +8,7 @@ class PlayerData{
     public int coin;
     public int maxArmor;
     public int currentGun;
-    public List<Gun> availableGun = new List<Gun>();
+    public List<string> availableGun = new List<string>();
     public int savePoint;
     public int level = 1;
 
@@ -19,7 +19,9 @@ class PlayerData{
         this.coin = data.Coin;
         this.currentGun = data.CurrentGun;
         this.maxArmor = data.MaxArmor;
-        this.availableGun = data.availableGun;
+        foreach(Gun gun in data.availableGun) {
+            this.availableGun.Add(gun.weaponName);
+        }
         this.savePoint = savePoint;
         this.level = level;
     }
