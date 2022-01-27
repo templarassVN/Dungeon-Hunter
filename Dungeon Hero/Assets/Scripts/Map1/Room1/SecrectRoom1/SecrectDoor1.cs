@@ -50,6 +50,7 @@ public class SecrectDoor1 : MonoBehaviour
             if (((collision.collider.transform.position.y < transform.position.y) && _Room1.Completechallenge())
                 || ((collision.collider.transform.position.y >= transform.position.y) && _secrectRoom1.GetComponent<SecrecRoom1>().IsFinished))
             {
+                Debug.Log("colision");
                 _UI_PressE.SetActive(true);
                 _isOpen = true;
             }

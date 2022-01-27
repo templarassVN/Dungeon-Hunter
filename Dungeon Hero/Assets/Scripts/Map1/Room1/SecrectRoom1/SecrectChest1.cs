@@ -8,6 +8,9 @@ public class SecrectChest1 : MonoBehaviour
     [SerializeField] GameObject _prize;
     
     bool _isopen = false;
+
+    [SerializeField]
+    SecrecRoom1 secrecRoom1;
     void Start()
     {
         _prize.SetActive(false);
@@ -26,6 +29,7 @@ public class SecrectChest1 : MonoBehaviour
             _isopen = true;
             GetComponent<Animator>().SetTrigger("Open");
             _prize.SetActive(true);
+            secrecRoom1.IsFinished = true;
         }
     }
 

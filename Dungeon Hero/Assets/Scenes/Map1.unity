@@ -9962,11 +9962,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4507325858006600349, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.98
+      value: -22.3
       objectReference: {fileID: 0}
     - target: {fileID: 4507325858006600349, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.34
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 4507325858006600349, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10003,6 +10003,10 @@ PrefabInstance:
     - target: {fileID: 4507325858006600351, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6411782714175740730, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8742383063910929490, guid: 8efc24e0400e78a4084a6c66bff75d07, type: 3}
       propertyPath: _armor
@@ -24217,6 +24221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prize: {fileID: 2143023892}
+  secrecRoom1: {fileID: 0}
 --- !u!61 &1531330945
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24451,6 +24456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prize: {fileID: 1026364612}
+  secrecRoom1: {fileID: 1661704426}
 --- !u!61 &1589441498
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36853,6 +36859,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1589441496}
     m_Modifications:
+    - target: {fileID: 3924913410083187655, guid: e5890a8fd04ef5048b5b86f93d63fb8d, type: 3}
+      propertyPath: _amount
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4606703673863936562, guid: e5890a8fd04ef5048b5b86f93d63fb8d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -43130,7 +43140,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.2475023}
+  m_Offset: {x: 0, y: -0.04698704}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -43141,7 +43151,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 0.676855}
+  m_Size: {x: 2, y: 1.0778855}
   m_EdgeRadius: 0
 --- !u!212 &1938584418
 SpriteRenderer:
@@ -69681,6 +69691,10 @@ PrefabInstance:
     - target: {fileID: 5404036599370113068, guid: e62b26903c437b54cbbd9a743584cf55, type: 3}
       propertyPath: m_Name
       value: Uzi
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404036599370113068, guid: e62b26903c437b54cbbd9a743584cf55, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e62b26903c437b54cbbd9a743584cf55, type: 3}

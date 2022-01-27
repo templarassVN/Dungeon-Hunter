@@ -399,6 +399,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Uzi
       objectReference: {fileID: 0}
+    - target: {fileID: 5404036599370113068, guid: e62b26903c437b54cbbd9a743584cf55, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e62b26903c437b54cbbd9a743584cf55, type: 3}
 --- !u!114 &126814195 stripped

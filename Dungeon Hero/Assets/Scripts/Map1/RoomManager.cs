@@ -34,11 +34,20 @@ public class RoomManager : MonoBehaviour
             if (GameStateManager.Instance.currentSavePoint > currentRoom)
                 _isFinished = true;
         }
+        countTimeClear = 3f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (_isFinished)
+        {
+            countTimeClear -= Time.deltaTime;
+            if (countTimeClear <= 0)
+            {
+                clear.SetActive(false);
+            }
+        }
         if (isFinished) return;
         if (PlayerController.instance.transform.position.x > -17 && spawnEnemyWave1.currentEnemy == -1)
         {
@@ -54,14 +63,8 @@ public class RoomManager : MonoBehaviour
             spawnEnemyWave3.Spawn();
             spawnEnemyWave2.currentEnemy = -2;
         }
-        if (clear.activeInHierarchy)
-        {
-            countTimeClear -= Time.deltaTime;
-            if (countTimeClear <= 0)
-            {
-                clear.SetActive(false);
-            }
-        }
+            Debug.Log("counter clear");
+        
         if (spawnEnemyWave3.currentEnemy == 0)
         {
             if (_isFinished == false)
