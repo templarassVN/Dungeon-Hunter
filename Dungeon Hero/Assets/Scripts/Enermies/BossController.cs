@@ -26,6 +26,9 @@ public class BossController : EnemyController
     public float spin_speed = 100f;
     float time;
 
+    [SerializeField]
+    GameObject winScreen;
+
     void Awake()
     {
         instance = this;
@@ -41,6 +44,8 @@ public class BossController : EnemyController
 
         UIBossController.instance.bossHealthBar.maxValue = health;
         UIBossController.instance.bossHealthBar.value = health;
+
+        winScreen.SetActive(false);
     }
 
     // // Update is called once per frame
@@ -143,6 +148,7 @@ public class BossController : EnemyController
         if (health <= 0)
         {
             UIBossController.instance.bossHealthBar.gameObject.SetActive(false);
+            winScreen.SetActive(true);
         }
         else if (health <= sequences[currentSequence].endSequenceHealth && currentSequence < sequences.Length - 1)
         {

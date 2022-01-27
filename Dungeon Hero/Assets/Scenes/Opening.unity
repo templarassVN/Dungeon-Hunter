@@ -49060,6 +49060,7 @@ MonoBehaviour:
   _PressE: {fileID: 1303048691}
   _offer: {fileID: 378910312}
   _price: {fileID: 963551607}
+  description: {fileID: 928830956}
   _cost: 100
   _playerSkin: {fileID: 0}
   _currSkin: {fileID: 518045012}
@@ -64298,7 +64299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2020966239
 MonoBehaviour:
   m_ObjectHideFlags: 0

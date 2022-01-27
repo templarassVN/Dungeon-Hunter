@@ -2475,7 +2475,7 @@ MonoBehaviour:
   m_CaptionText: {fileID: 2142946443}
   m_CaptionImage: {fileID: 0}
   m_Placeholder: {fileID: 0}
-  m_ItemText: {fileID: 0}
+  m_ItemText: {fileID: 55178525}
   m_ItemImage: {fileID: 0}
   m_Value: 0
   m_Options:

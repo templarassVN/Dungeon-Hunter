@@ -13,6 +13,9 @@ public class SkinItem : MonoBehaviour
     [SerializeField]
     Text _price;
 
+    [SerializeField]
+    Text description;
+
     /// <summary>
     /// Variable
     /// </summary>
@@ -65,6 +68,9 @@ public class SkinItem : MonoBehaviour
         var temp1 = _player_skin_stat.SpeedPoint;
         _player_skin_stat.SpeedPoint = _curr_skin_stat.SpeedPoint;
         _curr_skin_stat.SpeedPoint = temp1;
+
+        // change description
+        description.text = "Armor = " + _curr_skin_stat.AmorPoint + "\nSpeed = " + _curr_skin_stat.SpeedPoint; 
 
         PlayerController.instance.MaxArmor = _player_skin_stat.AmorPoint;
         PlayerController.instance.moveSpeed = _player_skin_stat.SpeedPoint;
