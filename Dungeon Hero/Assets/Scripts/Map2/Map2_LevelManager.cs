@@ -37,6 +37,4 @@ public class Map2_LevelManager : MonoBehaviour
         GameStateManager.Instance.SetGameState(GameState.PLAY);
         _Map2_Stage.SetActive(false) ;
     }
-
-    
 }
