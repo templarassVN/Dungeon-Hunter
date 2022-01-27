@@ -10,7 +10,7 @@ public class Map2_LevelManager : MonoBehaviour
     Camera _maincam;
     [SerializeField]
     private GameObject _Map2_Stage;
-
+    bool _winsong = true;
     private void Awake()
     {
         _maincam = Camera.main;
@@ -28,7 +28,12 @@ public class Map2_LevelManager : MonoBehaviour
     void Update()
     {
         if(BossController.instance.health <= 0)
-            MusicManager.Instance.PlaySheet(5);
+            if(_winsong)
+            {
+                _winsong = false;
+                MusicManager.Instance.PlaySheet(5);
+            }
+            
     }
     private IEnumerator PlayOpenMap2(PlayableDirector playableDirector)
     {
